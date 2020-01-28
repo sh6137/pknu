@@ -1,0 +1,7 @@
+구글 D2coding 다운
+압축 풀고 난 뒤 설치
+notepad++ -> 설정 -> global style -> default style -> d2coing 
+
+html 예제
+https://www.w3schools.com/
+
