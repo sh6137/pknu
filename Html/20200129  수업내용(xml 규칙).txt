@@ -1,0 +1,10 @@
+xml 규칙
+
+대소문자를 구분한다.
+tag 로 표현한다.
+모든 tag 는 반드시 쌍으로 표현한다. <Command></Command>
+단일 tag는 닫는 기호로 표현 <br/>
+모든 xml 문서는
+<?xml version="1.0" encoding="utf-8" ?>
+로 시작한다.
+모든 속성 값은 ""안에 표현한다.
