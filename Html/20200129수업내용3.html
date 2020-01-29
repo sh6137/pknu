@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>test3</title>
-
+<!-- 
     <style>
-        td{
-          padding: 10px;
-          background-color: aqua;
+       
+    </style> 
+-->
+<style>
+    h1{
+        text-align: center;
+        color:blue;
+    }
+    td{
+        text-align: center;
+        padding: 10px;
+        background-color: aqua;
+        width: 100px;
+        margin: 0px;
         } 
-    </style>
-
+</style>
 </head>
 <body>
     <h1>ol tag 순서</h1>
@@ -47,37 +57,55 @@
     <p>tr 행</p>
     <p>th 첫행 </p>
     <p>td 칸(열)</p>
-    <table border = "1">
+    <table border = "1"align="center">
        
         <tr>
-            <td>1</td>
-            <td>5</td>
-            <td>9</td>
-            <td>13</td>
+            <td colspan="4">1</td>
+            
             <td>17</td>
         </tr>
         <tr>
             <td>2</td>
             <td>6</td>
-            <td>10</td>
+            <td>&nbsp;</td>
             <td>14</td>
-            <td>18</td>
+            <td rowspan="2">18</td>
         </tr>
         <tr>
-            <td>3</td>
+            <td rowspan="2">3</td>
             <td>7</td>
-            <td>11</td>
-            <td>15</td>
-            <td>19</td>
+            <td colspan="2">11</td>
         </tr>
         <tr>
-            <td>4</td>
-            <td>8</td>
-            <td>12</td>
+            
+            <td colspan="2">8</td colspan>
             <td>16</td>
             <td>20</td>
         </tr>
 
+    </table>
+    <h1>table ex</h1>
+    <table border="1" bordercolor="maroon" align="center">
+        <tr>
+            <td rowspan="2">1</td>
+            <td colspan="2">2</td>
+            
+        </tr>
+        <tr>
+            
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td rowspan="2">1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            
+            <td>2</td>
+            <td>3</td>
+        </tr>
     </table>
 </body>
 </html>
