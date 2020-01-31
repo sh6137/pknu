@@ -1,0 +1,36 @@
+a{
+    color: blue;
+    text-decoration: none;
+    
+}
+a:hover{background-color: yellow;
+        
+}
+#underheader{
+    background-color: #999999;
+    color: #FFFFFF;
+}
+#header{
+    background-color: #666666;
+    color: #FFFFFF;
+}
+#nav{
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    
+    background-color: #CCCCCC;
+    background-image: url('../image/tile.jpg'); 
+    background-repeat: no-repeat;
+    
+}
+#main{
+    width: 632px;
+    padding: 20px;
+    background-color: #F1F1F1;
+    /* color: #F1F1F1; */
+}
+#footer{
+    background-color: #777777;
+    color: #FFFFFF;
+}

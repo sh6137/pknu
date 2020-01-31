@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utp-8">
+        <title>test13.html</title>
+    </head>
+    <body>
+        <form action="" method="GET">
+            <table border="1" cellpadding="0" cellspacing="0" align="center">
+                <tr>
+                    <th>아이디</th>
+                    <td><input type="text" name="userid"></td>
+                </tr>
+                <tr>
+                    <th>이름</th>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <th>성별</th>
+                    <td>
+                        <input type="radio" name="gender" value="man" id="man">
+                        <label for="man">남자</label>
+                        <input type="radio" name="gender" value="woman" id="woman">
+                        <label for="woman">여자</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>관심분야</th>
+                    <td>
+                        <input type="checkbox" name="favorite" value="java" id="java">
+                        <label for="java">java</label>
+                        <input type="checkbox" name="favorite" value="html" id="html">
+                        <label for="html">html</label>
+                        <input type="checkbox" name="favorite" value="oracle" id="oracle">
+                        <label for="oracle">oracle</label>
+                        <input type="checkbox" name="favorite" value="python" id="python">
+                        <label for="python">python</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>암호</th>
+                    <td><input type="password" name="password"></td>
+                </tr>
+                <tr>
+                    <th>전화번호</th>
+                    <td>
+                        <select name="tel">
+                            <option value="">선택</option>
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                            <option value="017">017</option>
+                            <option value="018">018</option>
+                            <option value="019">019</option>
+                        </select>
+                        -
+                        <input type="text" name="tel2" size="3" maxlength="4">-
+                        <input type="text" name="tel3" size="3" maxlength="4">
+                    </td>
+
+                </tr>
+                <tr>
+                    <th>이메일</th>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <th>우편번호</th>
+                    <td>
+                        <input type="text" name="zipcode" size="5" maxlength="5" readonly="readonly" value="12345">
+                        <input type="button" value="주소찾기">
+                    </td>
+
+                </tr>
+                <tr>
+                    <th>주소</th>
+                    <td>
+                        <input type="text" name="addrl">
+                        <input type="text" name="addr2">
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2" style="text-align: center;"><input type="submit" value="가입"></th>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

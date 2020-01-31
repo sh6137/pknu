@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>회원가입</title>
+    </head>
+    <body>
+        
+    </body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="css/20200131css과제.css">
+</head>
+<body>
+    <table border="1" cellpadding="0" cellspacing="0" width="978" align="center">
+        <thead>
+            <th id="header" colspan="3"><h1>Cities</h1></th>
+            <tr id="underheader">
+                <td>
+                    <a href="c.html">프로그래밍</a> 
+                </td>
+                <td>
+                    <a href="jsp.html">WEB</a> 
+                </td>
+                <td>
+                    <a href="hwp.html">OA</a> 
+                </td>
+            </tr>
+           
+        </thead>
+        <tbody>
+            <td id="nav">
+               <a href="java.html">Java</a> <br>
+               <a href="c.html">C</a><br>
+               <a href="python.html">PYTHON</a> <br>
+            </td>
+            
+            <td id="main" colspan="2">
+                
+                <form action="#" method="GET">
+                    <table border="1" cellpadding="0" cellspacing="0" align="center" width="600">
+                        <tr>
+                            <th>이름</th>
+                            <td><input type="text" name="name"></td>
+                        </tr>
+                        <tr>
+                            <th>아이디</th>
+                            <td><input type="text" name="id"></td>
+                        </tr>
+                        <tr>
+                            <th>비밀번호</th>
+                            <td><input type="password" name="password"></td>
+                        </tr>
+                        <tr>
+                            <th>성별</th>
+                            <td>
+                                <input type="radio" name="gender" value="man" id="man">
+                                <label for="man">남자</label>
+                                <input type="radio" name="gender" value="woman" id="woman">
+                                <label for="woman">여자</label>
+                            </td>
+                        </tr>
+                        <tr>
+        
+                            <th>관심분야</th>
+                            <td>
+                                <input type="checkbox" name="favoratie" value="java" id="java">
+                                <label for="java">java</label>
+                                <input type="checkbox" name="favoratie" value="c" id="c">
+                                <label for="c">c</label>
+                                <input type="checkbox" name="favoratie" value="python" id="python">
+                                <label for="python"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>전화번호</th>
+                            <td>
+                                <select name="tel1">
+                                    <option value="">선택</option>                  
+                                    <option value="010">010</option> 
+                                    <option value="011">011</option>
+                                    <option value="016">016</option>
+                                    <option value="017">017</option>
+                                    <option value="017">018</option>
+                                    <option value="017">019</option>
+                                </select>
+                                -
+                                <input type="text" name="tel2" size="4" maxlength="4">-
+                                <input type="text" name="tel3" size="4" maxlength="4">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이메일</th>
+                            <td>
+                                <input type="email" name="email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이메일</th>
+                            <td>
+                                <input type="text" name="email2" size="10">
+                                
+                                <select name="email3">
+                                    <option value="">선택</option>
+                                    <option value="@naver.com">@naver.com</option>
+                                    <option value="@google.com">@google.com</option>
+                                    <option value="@daum.net">@daum.net</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>우편번호</th>
+                            <td>
+                                <input type="text" name="zipcode" size="5" maxlength="5" readonly="readonly" value="12345">
+                                <input type="button" value="주소찾기">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>주소</th>
+                            <td>
+                                <input type="text" name="addrl">
+                                <input type="text" name="addr2">
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <th colspan="2" style="text-align: center;">
+                                <input type="submit" value="가입">
+                                <input type="button" value="뒤로" onClick="location.href='c.html'">
+                            </th>
+                        </tr>
+        
+                    </table>
+        
+                </form>
+            </td>
+
+        </tbody>
+        <tfoot>
+            <th id="footer" colspan="3"><a href="join.html"><h2>회원가입</h2></a></th>
+            
+        </tfoot>
+
+
+    </table>    
+</body>
+</html>
