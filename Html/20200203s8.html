@@ -18,10 +18,10 @@
         h1[title^=def]{
             background-color: orange;
         }
-        h1[title$=def]{
+        h1[title$=gif]{
             background-color: violet;
         }
-        h1[title*=def]{
+        h1[title*=efg]{
             background-color: brown;
         }
     </style>
@@ -42,7 +42,7 @@
        h1[title|=cde]{
             background-color: green;
         }
-        title 속성값이 cde 이거나 cde- 로 시작되는 h1 요소를 선택 
+        title 속성값이 cde인것과 cde- 로 시작되는 h1 요소를 선택 
     단어기준으로
     -->
     <h1 title ="cde">world</h1>
@@ -50,6 +50,44 @@
     <h1 title ="cde-xyz">world</h1>
     <h1 title ="cde xyz">world</h1>
     <h1 title =" cde=xyz">world</h1>
+    <hr>
+    <!-- ^ : caret
+       h1[title^=def]{
+            background-color: orange;
+        }
+        title 속성값이 def 로 시작되는 h1 요소를 선택 
+    단어기준이 아니라 전체 속성값중에서
+    -->
+    <h1 title ="def">world</h1>
+    <h1 title ="def xyz">world</h1>
+    <h1 title ="def-xyz">world</h1>
+    <h1 title ="abc def">world</h1>
+    <hr>
+    <!-- $ : dollor
+       h1[title^=gif]{
+            background-color: violet;
+        }
+        title 속성값이 gif 로 끝나는 h1 요소를 선택 
+    -->
+    <h1 title ="tiger.gif">world</h1>
+    <h1 title ="cat.jpg">world</h1>
+    <h1 title ="tiger.bak.gif">world</h1>
+    <h1 title ="abc gif">world</h1>
+    <hr>
+
+     <!-- * : astarisk
+       h1[title*=gif]{
+            background-color: brown;
+        }
+        title 속성값이 efg를 포함하는 h1 요소를 선택
+    -->
+    <h1 title ="efg xyz">world</h1>
+    <h1 title ="efgxyz">world</h1>
+    <h1 title ="lmn efg-xyz">world</h1>
+    <h1 title ="lmn xyz-efg">world</h1>
+    
+    <hr>
+
 
 </body>
 </html>
