@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Css selecter</title>
+    <style>
+        h1[title=abc]{
+            background-color: red;
+        }
+        h1[title~=bcd]{
+            background-color: green;
+        }
+        h1[title|=cde]{
+            background-color: blue;
+        }
+        h1[title^=def]{
+            background-color: orange;
+        }
+        h1[title$=def]{
+            background-color: violet;
+        }
+        h1[title*=def]{
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <!-- title 속성값이 abc 인 h1 선택 -->
+    <h1 title ="abc">world</h1>
+    <h1 title ="abc">world</h1>
+    <h1 title ="abc xyz">world</h1>
+    <hr>
+    <!-- title 속성값이 bcd를 포함한 h1 요소를 선택 
+    단어기준으로 -->
+    <h1 title ="bcd wyz">world</h1>
+    <h1 title ="bcdwyz">world</h1>
+    <h1 title ="wyz bcd">world</h1>
+    <hr>
+    <!-- | : vertical bar 
+       h1[title|=cde]{
+            background-color: green;
+        }
+        title 속성값이 cde 이거나 cde- 로 시작되는 h1 요소를 선택 
+    단어기준으로
+    -->
+    <h1 title ="cde">world</h1>
+    <h1 title ="cdexyz">world</h1>
+    <h1 title ="cde-xyz">world</h1>
+    <h1 title ="cde xyz">world</h1>
+    <h1 title =" cde=xyz">world</h1>
+
+</body>
+</html>
