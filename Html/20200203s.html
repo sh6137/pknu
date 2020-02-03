@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form tag 는 서버로 정보를 전송 
+        정보전송시 method = "get" , "post"
+        GET - 정보를 주소줄에 담아서 전송 
+                전송량에 제한 있음
+                정보가 노출
+        POST - 정보를 REQUEST HEAD 에 담아서 전송
+                정보전송량에 제한 없음(HTTP 1.1)
+                (버전에 따라 다름)
+                정보 노출 X
+    -->
+    <form action="https://www.naver.com" method="POST">
+        아이디<input type="text" name="userid" value="sky"><br>
+        비밀번호<input type="password" name="userpw" value="1234"><br>
+        가입인사<textarea name="intro" rows="5" cols="30" maxlength="2000"></textarea>
+        <input type="submit" value="보내기">
+        <input type="image" alt="보내기">
+        <button>ok</button>
+        <input type="button" value="보내기">
+    </form>
+    <a href="https://search.naver.com/search.naver?sm=top_hty&fbm=1&ie=utf8&query=apple">apple naver</a>
+    
+</body>
+</html>
