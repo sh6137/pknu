@@ -6,15 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>text24</title>
     <style>
+        /* display : inline element는 
+            height, width 적용 안됨
+            text-align 적용안됨
+            margin: display block to right bottom left전부적용
+            margin: display inline left right 적용
+            padding:
+        */
     div, span{
         border: 1px solid red;
     }
-    div, span{
+    div{
         text-align: center;
+        align-content: center;
+        width: 400px;
+        height: 100px;
+        margin: 20px auto;;
+        padding: 50px;
+        
+    }
+    span{
+        text-align: center;
+        width: 200px;
+        height: 100px;
+        margin: 70px;
+        /* padding: 50px; */
+        display: inline-block;
+    }
+
+    p{
+        
+        border: solid 1px black;
+        height: 300px;
+        width: 800px;
+        margin: 0px auto;
+        text-align: center;
+        font-size: 32px;
+        line-height: 300px;
+        border-radius: 50px;
+    }
+    h1+h1{
+        font-size: 40px;
+    }
+    h1:last-child{
+       color: red;
     }
     </style>
 </head>
 <body>
+    <h1>heading 1</h1>
+    <h1 id="h1_1">heading 1</h1>
+    <p>p tag lorem ipsum dollor</p>
     <div>div World</div>
     <div>div World</div>
     <div>div World</div>
@@ -22,5 +64,7 @@
     <span>span tag</span>
     <span>span tag</span>
     <span>span tag</span>
+    <h1>heading 1</h1>
+    <b>bold</b>
 </body>
 </html>
