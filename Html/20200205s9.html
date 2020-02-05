@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #navlist{
+            position: relative;
+        }
+        #navlist li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: absolute;
+            top:0;
+        }
+        #navlist li, #navlist a{
+            height: 44px;
+            display: block;
+        }
+        #home{
+            left: 0px; 
+            width: 46px;
+            background: url('image/img_navsprites.gif') 0 0;
+        }
+        #prev{
+            left: 70px; 
+            width: 46px;
+            background: url('image/img_navsprites.gif') -45px 0;
+        }
+        #next{
+            left: 120px; 
+            width: 44px;
+            background: url('image/img_navsprites.gif') -91px 0;
+        }
+    </style>
+</head>
+<body>
+    이미지
+    <ul id="navlist">
+        <li id="home"><a href="http://www.naver.com"></a></li>
+        <li id="prev"><a href="http://www.google.com"></a></li>
+        <li id="next"><a href="http://www.daum.net"></a></li>
+    </ul>
+</body>
+</html>

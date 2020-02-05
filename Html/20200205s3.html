@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            
+        }
+        .red{
+            background-color: red;
+            top: 10px; left:10px;
+            z-index: 10;
+        }
+        .green{
+            background-color: green;
+            top: 50px; left:50px;
+            z-index: 1;
+        }
+        .blue{
+            -webkit-box-shadow:inset 12px 12px 50px 80px #69FFB9;
+box-shadow:inset 12px 12px 50px 80px #69FFB9;
+z-index: 50;
+        }
+        
+        body>div{
+            width: 400px; height: 100px;
+            border: 3px black  solid;
+            position: relative;
+           /*  overflow: scroll;*/
+            overflow: hidden; 
+        }
+    </style>
+</head>
+<body>
+    <h1>이글은 어디에 나오나요</h1>
+    <div>
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+    <h1>이글은 어디에 나오나요</h1>
+</body>
+</html>
