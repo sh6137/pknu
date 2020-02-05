@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p{
+            color: blue;
+        }
+        /* p:first-child{font-size: 100%;} */
+        /* p:nth-child(1){font-size: 100%;}
+        p:nth-child(2){font-size: 200%;}
+        p:nth-child(3){font-size: 300%;}
+        p:nth-child(4){font-size: 400%;
+            white-space: nowrap;
+        }
+        p:last-child{font-weight: bold;} */
+        /* p:nth-of-type(2n+1){
+            font-size: 2em;;
+        } */
+        p:nth-of-type(odd){
+            color: brown;
+        }
+        p:nth-of-type(even){
+            text-decoration: line-through;
+        }
+        p:nth-of-type(1){
+            font-size: 1em;
+        }
+        p:nth-of-type(2){
+            font-size: 2em;
+        }
+        p:nth-of-type(3){
+            font-size: 3em;
+        }
+        p:nth-of-type(4){
+            font-size: 4em;
+        }
+    </style>
+    <script>
+        function btn_click(){
+            // 4번째 p 태그에  배경색을 추가한다.
+            var p4 = document.querySelector('p:nth-child(4)');
+            p4.style.backgroundColor = 'yellow';
+            
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <p>lerm ipsum dolor sit amet, consectetur adipiscing</p>
+        <p>lerm ipsum dolor sit amet, consectetur adipiscing</p>
+        <p>lerm ipsum dolor sit amet, consectetur adipiscing</p>
+        <p>lerm ipsum dolor sit amet, consectetur adipiscing</p>
+    </div>
+    
+    <button onclick="btn_click()">click</button>
+</body>
+</html>
