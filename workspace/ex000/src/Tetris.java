@@ -256,7 +256,7 @@ public class Tetris extends JPanel {
 					game.rotate(-1);
 					break;
 				case KeyEvent.VK_DOWN:
-					game.rotate(+1);
+					game.dropDown();
 					break;
 				case KeyEvent.VK_LEFT:
 					game.move(-1);
@@ -281,7 +281,7 @@ public class Tetris extends JPanel {
 			@Override public void run() {
 				while (true) {
 					try {
-						Thread.sleep(1000);
+						Thread.sleep(200);
 						game.dropDown();
 					} catch ( InterruptedException e ) {}
 				}
