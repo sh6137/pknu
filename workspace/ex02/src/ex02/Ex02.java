@@ -52,6 +52,41 @@ public class Ex02 {
 		System.out.println(adult);
 		
 		System.out.println("End");
+		System.out.println();
+		System.out.println();
 		
-	}
+		/*
+		 * 
+		 * 비교 논리 연산
+		 * 
+		 */
+		int num1 = 1;
+		String name1 = "아이유";
+		int age1 = 25;
+		String address1 = "부산";
+		String address2 = "부산";
+		char gender1 = '여';
+		
+		//20대 
+		boolean bl1= gender1 == '여';
+		System.out.println("b1");
+		System.out.println(bl1);
+		
+		//20대 여자
+		boolean bl2= gender1 == '여' && (age1 >=20 && age1 < 30);
+		System.out.println("b2");
+		System.out.println(bl2);
+		
+		//20대 부산 여자
+		boolean bl3= gender1 == '여'&& (age1 >=20 && age1 < 30) && address1.equals("부산");
+		System.out.println("b3");
+		System.out.println(bl3);	
+		//20대 부산 여자 대구, 창원
+		boolean bl4= gender1 == '여'&& (age1 >=20 && age1 < 30) && address1.equals("부산") || address1.equals("대구") || address1.equals("창원");
+		System.out.println("b4");
+		System.out.println(bl4);	
+		
+		boolean bl5 = address1 == address2;
+		System.out.println(bl5);
+		}
 }
