@@ -10,7 +10,7 @@ public class Ex03 {
 		int num2 = 0;
 		int age = 26;
 		float height = 178.3f;
-		float height2 = (float) 180.3;
+		float height2 = (float) 180.3;	
 		double height3 = 178.3;
 
 		boolean adult = true;
