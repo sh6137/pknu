@@ -1,0 +1,45 @@
+*{margin: 0; padding: 0;}
+body{font-family: Dotum;}
+li{list-style: none;}
+a{text-decoration: none;}
+img{border: 0;}
+a:visited { color: black; text-decoration: none;}
+
+
+#main_header{
+    position: relative;
+    height: 45px;
+    line-height: 60px;
+    padding-left: 10px;
+    border-bottom:1px solid black;
+    background: white;
+    color: white;
+    font-weight: bold;
+    display: block;
+   
+}
+#main_header > ul.left{
+    overflow: hidden;
+    float: left;
+}
+
+#main_header > ul.right{
+    overflow: hidden;
+    float: right;
+}
+#main_header > ul.left > li{float: left; font-size : 20px;}
+#main_header > ul.right > li{float: left; font-size: 12px;}
+
+
+#main_gnb a{
+    /* 레이아웃 설정 */
+    display: block;
+    padding: 10px 20px;
+    /* 색상 설정 */
+    border-left: 1px solid #5F6673;
+    border-right:1px solid #242A37;
+    border-right:1px solid #242A37;
+    color: white;
+    font-weight: bold;
+}
+
