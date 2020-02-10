@@ -35,9 +35,16 @@ public class Ex02 {
 		System.out.println(r10);
 		
 		//divide by zero - 예외 : 실행할때 발생하는 오류
-		c1=7; c2=0;
-		int r11 = c1/c2;
-		System.out.println(r11);
+		//예외처리(try catch)
+		try {
+			c1=7; c2=0;
+			int r11 = c1/c2;
+			System.out.println(r11);
+		} catch (ArithmeticException e) {
+			System.out.println("error");
+		}
+		System.out.println("end");
+		
 		
 	}
 }
