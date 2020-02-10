@@ -41,10 +41,17 @@ public class Ex02 {
 			int r11 = c1/c2;
 			System.out.println(r11);
 		} catch (ArithmeticException e) {
+			System.out.println("계산 error" + e.getMessage());
+		} catch (Exception e) {
 			System.out.println("error");
 		}
 		System.out.println("end");
 		
+		int age = 27;
+		boolean adult = age >19;
+		System.out.println(adult);
+		
+		System.out.println("End");
 		
 	}
 }
