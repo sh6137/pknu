@@ -50,5 +50,29 @@ public class Ex04 {
 			System.out.println(total2);
 		}
 		System.out.println(total2);
+		System.out.println("------------------------------------");
+		//1+2+3+5+8+13+21
+		int a1 = 1;
+        int a2 = 1;
+        int a3;
+        int ptotal = a1;
+        System.out.println(a1);
+        System.out.println(a2);
+        
+        for(int i=1; i<=8; i++){
+            a3=a1+a2;
+            System.out.println(a3);
+            a1=a2;
+            a2=a3;
+            ptotal = ptotal+a3;
+            System.out.println("합은 : "+ptotal);
+        }        
+
+        double f = 0.0f;
+        for(int i = 1; i<=10000; i++)
+        {
+        	f = f+0.1;
+        }
+        System.out.println(f);
 	}
 }
