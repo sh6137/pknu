@@ -67,3 +67,34 @@ body{
 #main_img{
     height: 370px;
 }
+#wrap{overflow: hidden;}
+#wrap > #main_lnb{
+    float: left;
+    width: 200px;
+}
+#wrap > #content_wrap{
+    float:left;
+    width: 100%;
+    margin-right: -200px;
+}
+#warp > #content_warp > #content{padding-right: 200px;}
+
+#wrap{background: white;}
+#main_lnb > ul > li > a{
+    display: block;
+    height: 40px; line-height: 40px;
+    padding-left:15px;
+
+    border-top: 1px solid #96d6f6;
+    border-bottom: 1px solid #6298B2;
+    color: white;
+    font-weight: bold;
+}
+
+#content{
+    background: white;
+    border-left: 10px soild black;
+}
+article{
+    padding: 10px;
+}
