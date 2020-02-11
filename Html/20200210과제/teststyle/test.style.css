@@ -16,7 +16,7 @@ a:visited { color: black; text-decoration: none;}
     color: white;
     font-weight: bold;
     display: block;
-   border-color: lightgray;
+    border-color: lightgray;
 }
 #nav_header{
     position: relative;
@@ -66,12 +66,23 @@ a:visited { color: black; text-decoration: none;}
 }
 body{
     min-width: 760px;
+    
 }
 
 #main_img{
-    height: 370px;
+    height: 580px;
+    position: relative;
+    width: 1280px;
+    padding: 0;
+    
 }
-#wrap{overflow: hidden;}
+#wrap{
+    border: solid 5px;
+    overflow: hidden;
+    background: white;
+    margin: 0 auto;
+    margin-left: 250px;
+}
 #wrap > #main_lnb{
     float: left;
     width: 200px;
@@ -83,7 +94,7 @@ body{
 }
 #warp > #content_warp > #content{padding-right: 200px;}
 
-#wrap{background: white;}
+
 #main_lnb > ul > li > a{
     display: block;
     height: 40px; line-height: 40px;
@@ -108,15 +119,25 @@ article{
     padding: 10px;
     border-top: 1px solid lightgray;
     text-align: center;
+    overflow: hidden;
 }
 #main_footer ul{
     list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: white;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+   
 }
-.main_footer_line {
+.footer_line {
     float: left;
     width: 200px;
+    
+    
   }
+.my_image{
+    width: 950px;
+    height: 550px;
+}
+    
+    
