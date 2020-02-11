@@ -18,17 +18,35 @@ a:visited { color: black; text-decoration: none;}
     display: block;
    
 }
+#nav_header{
+    position: relative;
+    height: 45px;
+    line-height: 50px;
+    padding-left: 1px;
+    border-bottom:1px solid black;
+    background: white;
+    color: black;
+    font-size : 12px;
+}
 #main_header > ul.left{
     overflow: hidden;
     float: left;
+    
 }
 
+#main_header > ul.center{
+    overflow: hidden;
+    float: right;
+    left: -50%;
+}
 #main_header > ul.right{
     overflow: hidden;
     float: right;
+    left: -50%;
 }
 #main_header > ul.left > li{float: left; font-size : 20px;}
 #main_header > ul.right > li{float: left; font-size: 12px;}
+#main_header > ul.center > li{float: left; font-size: 12px;}
 
 
 #main_gnb a{
@@ -42,4 +60,10 @@ a:visited { color: black; text-decoration: none;}
     color: white;
     font-weight: bold;
 }
+body{
+    min-width: 760px;
+}
 
+#main_img{
+    height: 370px;
+}
