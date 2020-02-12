@@ -82,6 +82,8 @@ body{
     background: white;
     margin: 0 auto;
     margin-left: 250px;
+    margin-right: 250px;
+    min-width: 760px;
 }
 #wrap > #main_lnb{
     float: left;
