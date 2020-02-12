@@ -3,8 +3,13 @@ body{font-family: Dotum;}
 li{list-style: none;}
 a{text-decoration: none;}
 img{border: 0;}
-a:visited { color: black; text-decoration: none;}
+a:visited{ color: black; text-decoration: none;}
 
+h1{
+    font-size: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
 
 #main_header{
     position: relative;
@@ -18,6 +23,9 @@ a:visited { color: black; text-decoration: none;}
     display: block;
     border-color: lightgray;
 }
+#main_header a{
+    color: black;
+}
 #nav_header{
     position: relative;
     height: 45px;
@@ -27,6 +35,9 @@ a:visited { color: black; text-decoration: none;}
     background: white;
     color: black;
     font-size : 12px;
+}
+#nav_header a{
+    color: black;
 }
 #main_header > ul.left{
     overflow: hidden;
@@ -57,7 +68,7 @@ a:visited { color: black; text-decoration: none;}
     border-left: 1px solid #5F6673;
     border-right:1px solid #242A37;
     border-right:1px solid #242A37;
-    color: white;
+    color: black;
     font-weight: bold;
 }
 #main_header a{
@@ -77,17 +88,19 @@ body{
     
 }
 #wrap{
-    border: solid 5px;
+    /* border: solid 5px; */
     overflow: hidden;
     background: white;
     margin: 0 auto;
     margin-left: 250px;
     margin-right: 250px;
-    min-width: 760px;
+    min-width: 1300px;
+    
 }
 #wrap > #main_lnb{
     float: left;
     width: 200px;
+   
 }
 #wrap > #content_wrap{
     float:left;
@@ -118,10 +131,13 @@ article{
     padding: 10px;
 }
 #main_footer{
-    padding: 10px;
+    padding-right: 250px;
     border-top: 1px solid lightgray;
     text-align: center;
     overflow: hidden;
+    min-width: 1300px;
+    padding-left: 250px;
+    padding-top: 50px;
 }
 #main_footer ul{
     list-style-type: none;
@@ -129,6 +145,7 @@ article{
     padding: 0;
     overflow: hidden;
     background-color: white;
+
    
 }
 .footer_line {
@@ -137,6 +154,46 @@ article{
     
     
   }
+.footer_line ul li:first-child{
+    padding-bottom: 20px;
+    font-size: 16px;
+    color: black;
+}
+.footer_line ul li{
+    padding-bottom: 10px;
+    font-size: 13px;
+    color: lightgray;
+}
+#footer_gnb{
+    
+    position: relative;
+    height: 110px;
+    line-height: 40px;
+    padding-left: 250px;
+    border-bottom:1px solid black;
+    background: black;
+    color: white;
+    font-weight: bold;
+    display: block;
+    border-color: lightgray;
+    min-width: 1300px;
+}
+#footer_gnb > ul.left{
+    padding-top: 20px;
+}
+#footer_gnb > ul.left > li{
+    float: left; 
+    font-size: 12px;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+#footer_gnb > ul.left > li > a{
+    color: gray;
+}
+#footer_gnb > ul.left > li > a:hover{
+    color: white;
+    font :bold;
+}
 .my_image{
     width: 950px;
     height: 550px;
