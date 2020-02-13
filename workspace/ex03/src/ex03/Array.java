@@ -22,8 +22,8 @@ public class Array {
 		System.out.println("------");
 		
 		int tmp =0;
-		for (int i = 0; i < a.length; i++) {
-			for (int j = i+1; j < a.length; j++) {
+		for (int i = 0; i < a.length-1; i++) {
+			for (int j = i+1; j < a.length-1; j++) {
 				if(a[i]>a[j]) {
 					tmp = a[i];
 					a[i] = a[j];

@@ -54,6 +54,7 @@ h1{
     overflow: hidden;
     float: right;
     left: -50%;
+    
 }
 #main_header > ul.left > li{float: left; font-size : 20px;}
 #main_header > ul.right > li{float: left; font-size: 12px;}
@@ -102,10 +103,12 @@ body{
     width: 200px;
    
 }
+
 #wrap > #content_wrap{
     float:left;
     width: 100%;
     margin-right: -200px;
+    
 }
 #warp > #content_warp > #content{padding-right: 200px;}
 
@@ -122,13 +125,16 @@ body{
     text-align: center;
     font-size: 13px;
 }
-
+#main_lnb > ul > li > a:hover{
+    text-decoration: underline;
+}
 #content{
     background: white;
     border-left: 10px soild black;
 }
 article{
     padding: 10px;
+    padding-left: 200px;
 }
 #main_footer{
     padding-right: 250px;
@@ -199,4 +205,4 @@ article{
     height: 550px;
 }
     
-    
+
