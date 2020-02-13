@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>손형호톡|카카오톡</title>
-    <link rel="stylesheet" href="teststyle/test.style.css">
+    <link rel="stylesheet" href="teststyle/teststyle.css">
+    <link rel="stylesheet" href="teststyle/login.css">
     
 </head>
 <body>
@@ -31,33 +32,34 @@
     </nav>
     
     <div>
-        <fieldset>
-            <legend class="">로그인 입력폼</legend>
-            <div class=" ">
-                <h3 class="">로그인</h3>
-
-                <div class="">
-                    <label for="" class="">이메일</label>
-                    <div id="" class="">
-                        <input type="text" name="email" id="tfEmail" class="tf_write" autocomplete ="off" autofocus>
-                    </div>
-                    <em class=""></em>
-                </div>
-                <div class="">
-                    <label for="" class="">비밀번호</label>
-                    <div id="" class="">
-                        <input type="password" name="password" id="tfPw" class="tf_write" autocomplete ="off">
-                    </div>
-                    <em class=""></em>
-                </div>
-
-                <ul class="">
-                    <li>
-                        비밀번호를 잊어버렸나요? <a href="#" class="link_info">비밀번호 찾기</a>
-                    </li>
-                </ul>
+        <div>
+            
+            <table id="login">
+                <tr>
+                    <td>
+                        <h2>로그인</h2>
+                        <p>이메일</p>
+                        <input class="inputsize" type="email" name="email"><br>
+                        <p>비밀번호</p>
+                        <input class="inputsize" type="password" name="password"><br>  
+                        
+                        <ul>
+                            <li>
+                                비밀번호를 잊어버렸나요? <a href="#">비밀번호 찾기</a>
+                            </li>
+                            <li>
+                               회원가입 하세요. <a href="join.html">회원가입</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+                
+            <div>
+                <input id="btn" type="button" name="button" value="로그인">
             </div>
-        </fieldset>
+        </div>
+        
     </div>
         
     <footer id="main_footer">
