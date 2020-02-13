@@ -1,59 +1,53 @@
 package ex03;
 
 public class Ex06 {
-	
-	static char[][] shape;
-	public static void main(String[] args) {
-		//char [][] shape = new char[5][5];
+
+	static char [][] shape;
+	public static void main(String[] args) {	
 		shape = new char[5][5];
-		//arr array[]
+		
 		init_array();
-		//fill array()
-		fill_array();		
-		//disp array()
+		fill_array();
 		disp_array();
 		
-		System.out.println("-------");
-		//arr array[]
+		System.out.println("=============================");
 		init_array();
-		//fill array()
-		fill_array2();		
-		//disp array()
+		fill_array2();
 		disp_array();
-		
+	}
 	
+	public static void init_array() {
+		for(int i =0;i<5;i++) {
+	    	for (int j = 0; j < shape[0].length; j++) {
+	    		shape[i][j] = ' ';
+		    }
+		}	
 	}
-	public static void disp_array() {
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < shape[0].length; j++) {
-				System.out.printf("%c", shape[i][j]);
-			}
-			System.out.println();
-		}
-		
-	}
+	
 	public static void fill_array() {
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < shape[0].length; j++) {
-				shape[i][j] = '8';
-			}
+		for(int i =0;i<5;i++) {
+	    	for (int j = 0; j < shape[0].length; j++) {
+	    		shape[i][j] = '*';
+		    }
 		}
 	}
 	
 	public static void fill_array2() {
-		for (int i = 0; i < 5; i++) {
+		for(int i =0;i<5;i++) {
 			for (int j = i; j < 5; j++) {
-				shape[i][j] = '8';
+				shape[i][j] = '*';
 			}
 		}
 	}
 	
-	public static void init_array(){
-		
-		for (int i = 0; i < shape.length; i++) {
-			for (int j = 0; j < shape[0].length; j++) {
-				shape[i][j] = 'd';
-			}
-		}
+	
+	
+	public static void disp_array() {
+		for(int i =0;i<5;i++) {
+	    	for (int j = 0; j < shape[0].length; j++) {
+	    		System.out.printf("%c", shape[i][j]);
+		    }
+	    	System.out.print("\n");
+		}	
 	}
 }
