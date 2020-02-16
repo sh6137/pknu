@@ -7,19 +7,26 @@
     <title>손형호톡|카카오톡</title>
     <link rel="stylesheet" href="teststyle/teststyle.css" />
     <link rel="stylesheet" href="teststyle/login.css" />
-    <style>
-      #btn.active {
-        background-color: #000;
-      }
-    </style>
-
     <script src="http://code.jquery.com/jquery.min.js">
-      $("#btn").click(function() {
-        toggleClass(".active-color");
+            $(function(){
+          $('#userPw').keyup(function(){
+            $('#chkNotice').html('');
+          });
+
+          $('#userPwChk').keyup(function(){
+
+              if($('#userPw').val() != $('#userPwChk').val()){
+                $('#chkNotice').html('비밀번호 일치하지 않음<br><br>');
+                $('#chkNotice').attr('color', '#f82a2aa3');
+              } else{
+                $('#chkNotice').html('비밀번호 일치함<br><br>');
+                $('#chkNotice').attr('color', '#199894b3');
+              }
+
+          });
       });
     </script>
   </head>
-
   <body>
     <header id="main_header">
       <ul class="left">
@@ -44,49 +51,72 @@
 
     <div>
       <div>
-        <table class="login">
+        <table class="join">
           <tr>
             <td>
-              <h2>[필수] 개인정보 수집 및 이용동의</h2>
-              <p>(주)카카오는 아래의 목적으로 개인정보를 수집 및 이용하며,</p>
-              <p>회원의 개인정보를 안전하게 취급하는데 최선을 다합니다.</p>
-              <br />
-              <p style="font-weight: bold;">
-                개인정보 수집 및 이용에 대한 안내
-              </p>
-              <br />
-
-              <table>
-                <tr>
-                  <td id="tdpurpose">
-                    1. 목적 : 지원자 개인 식별, 지원의사 확인, 입사전형의 진행,
-                    고지사항 전달, 입사 지원자와의<br />
-                    원활한 의사소통, 지원이력 확인 및 면접 불합격자 재지원
-                    제한<br />
-                    2. 항목 : 아이디(이메일주소), 비밀번호, 이름, 생년월일,
-                    휴대폰번호<br />
-                    3. 보유기간 : 회원 탈퇴 시까지 보유 (단, 지원이력 정보는
-                    일방향 암호화하여 탈퇴일로부터 <br />
-                    1년간 보관 후 파기합니다.)<br />
-                  </td>
-                </tr>
-                <tr>
-                  <td id="btnlayer2">
-                    <input id="btn" type="button" name="button" value="동의" />
-                  </td>
-                </tr>
-              </table>
-
-              <ul>
-                <li style="font-size: 12px; text-align: center;">
-                  위 개인정보 수집에 대한 동의를 거부할 권리가 있으며, 동의 거부
-                  시에는 지원자 등록이 <br />
-                  제한될 수 있습니다.<br />
-                  더 자세한 내용에 대해서는 [카카오 기업사이트
-                  개인정보처리방침]을 참고하시길<br />
-                  바랍니다.<br />
+              <h2>지원자등록</h2>
+              <ul id="liststyle">
+                <li>
+                  카카오 입사 지원은 1인당 1개의 이메일계정을 이용할 수
+                  있습니다.
+                </li>
+                <li>
+                  동일인이 여러 이메일을 이용하여 지원하는 경우 불이익이 있을 수
+                  있습니다.
+                </li>
+                <li>
+                  7일내에 이메일 인증을 하지 않는 경우, 해당 계정은 자동으로
+                  삭제 됩니다.
                 </li>
               </ul>
+              <p>이메일</p>
+              <input
+                class="inputsize"
+                type="email"
+                placeholder="이메일"
+                name="email"
+              /><br />
+              <p>비밀번호</p>
+              <input
+                id="userPw"
+                class="inputsize"
+                type="password"
+                placeholder="비밀번호"
+                name="password"
+                required
+              /><br />
+              <p>비밀번호 확인</p>
+              <input
+                id="userPwChk"
+                class="inputsize"
+                type="password"
+                placeholder="비밀번호"
+                name="repassword"
+                required
+              /><br />
+              <p id="chkNotice" size="2"></p>
+
+              <p>이름</p>
+              <input
+                class="inputsize"
+                type="text"
+                placeholder="이름"
+                name="name"
+              /><br />
+              <p>생년월일</p>
+              <input
+                class="inputsize"
+                type="text"
+                placeholder="예)1993.05.17"
+                name="birthday"
+              /><br />
+              <p>휴대폰 번호</p>
+              <input
+                class="inputsize"
+                type="text"
+                placeholder="예)010-1234-1234"
+                name="phonenumber"
+              /><br />
             </td>
           </tr>
           <tr>
@@ -95,8 +125,8 @@
                 id="btn"
                 type="button"
                 name="button"
-                value="다음"
-                onclick="location.href='join.html'"
+                value="등록완료"
+                onclick="location.href='20200210test.html'"
               />
             </td>
           </tr>

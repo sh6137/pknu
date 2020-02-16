@@ -1,60 +1,82 @@
-h2{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    font-size: 20px;
+h2 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 20px;
 }
-#login tr>td>ul>li{
-    list-style: disc;
-    margin-left: 15px;
-    margin-bottom: 15px;
+#login tr > td > ul > li {
+  list-style: disc;
+  margin-left: 15px;
+  margin-bottom: 15px;
 }
-.login{
-    margin : 75px auto;
-    margin-bottom: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 50px;
-    border: solid 1px lightgray;
-    
-}
-.inputsize{
-    width : 540px ;
-    height : 50px ;
-    font-size : 20px ;
-    margin-top: 10px;
-    margin-bottom: 30px;
-}
-#btn{
-    background-color: #E6E6E6;
-    border: solid #E6E6E6; 
-    color: black;
-    padding: 20px 248px;
-    
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 148px;
-    margin-right : 250px;
-    margin-top: 0px;
-    margin-bottom: 50px;
-    cursor: pointer;
-}
-#btnlayer > #btn{
-    margin-top: 20px;
-    margin-right: 0;
-    margin-left : 0;
-
-}
-#btnlayer2 > #btn{
-    margin-top: 0px;
-    margin-right: 0;
-    margin-left : 0;
+.login {
+  margin: 75px auto;
+  margin-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  border: solid 1px lightgray;
 }
 
-#tdpurpose{
-    font-size: 12px; 
-    border: 1px solid lightgray;
-    line-height: 25px;
-    height: 146px;
+#join tr > td > ul > li {
+  list-style: circle;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+#join tr > td > ul {
+  list-style: disc;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+#liststyle {
+  list-style-type: disc;
+  height: 110px;
+}
+.join {
+  margin: 75px auto;
+  margin-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  border: solid 1px lightgray;
+}
+
+.inputsize {
+  width: 540px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+#btn {
+  background-color: #e6e6e6;
+  border: solid #e6e6e6;
+  color: black;
+  padding: 20px 248px;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 148px;
+  margin-right: 250px;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+#btnlayer > #btn {
+  margin-top: 20px;
+  margin-right: 0;
+  margin-left: 0;
+}
+#btnlayer2 > #btn {
+  margin-top: 0px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+#tdpurpose {
+  font-size: 12px;
+  border: 1px solid lightgray;
+  line-height: 25px;
+  height: 146px;
 }

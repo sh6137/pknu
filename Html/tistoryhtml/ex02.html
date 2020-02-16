@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js">
+          $(function(){
+          $('#userPw').keyup(function(){
+            $('#chkNotice').html('');
+          });
+
+          $('#userPwChk').keyup(function(){
+
+              if($('#userPw').val() != $('#userPwChk').val()){
+                $('#chkNotice').html('비밀번호 일치하지 않음<br><br>');
+                $('#chkNotice').attr('color', '#f82a2aa3');
+              } else{
+                $('#chkNotice').html('비밀번호 일치함<br><br>');
+                $('#chkNotice').attr('color', '#199894b3');
+              }
+
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="password" id="userPw" placeholder="비밀번호" />
+    <input type="password" id="userPwChk" placeholder="비밀번호 확인" />
+    <font id="chkNotice" size="2"></font>
+  </body>
+</html>
