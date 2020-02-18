@@ -7,6 +7,22 @@ class Student{
 	public void info() {
 		System.out.println(name + ":" + tel);
 	}
+	//equals 는 기능 재정의가 아니면 hashcode 비교
+	//String euqals 는 값을 비교하도록 재정의 되어있다.
+	//기존의 equals 기능을수정(재정의)
+	//@override : @:annotation약자 :컴파일러에게 정보를 준다.
+	//혹시 오타가 발생하여 다른 메소르도 인식하지 않도록
+	@Override
+	public boolean equals(Object obj) {
+		boolean isSameName = false;
+		boolean isSameTel = false;
+		
+		Student other = (Student)obj;
+		isSameName = this.name.equals(other.name);
+		isSameTel = this.tel.equals(other.tel);
+		
+		return isSameName && isSameTel;
+	}
 }
 
 public class TestMain {
@@ -54,6 +70,9 @@ public class TestMain {
 		boolean isSameTel = s1.tel.equals(s3.tel);
 		System.out.println(isSameTel);
 		
+		
+	//	euqals()를 재정의 하기전은 다른
+	//	재정의 한 후 는 같은
 		if(s1.equals(s3)) {
 			System.out.println("같은");
 		}
