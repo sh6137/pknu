@@ -9,6 +9,7 @@ public class Student {
 	int tot;
 	int avg;
 	String score;
+	int rank;
 	
 	public Student() {
 		

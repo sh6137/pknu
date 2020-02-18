@@ -26,6 +26,7 @@ public class Students {
 					+st[i].tot + ","
 					+st[i].avg + ","
 					+st[i].score + "," +
+					st[i].rank +
 					"\n";
 		}
 		System.out.println(msg);
@@ -38,10 +39,11 @@ public class Students {
 					+st[i].name + ","
 					+st[i].kor + ","
 					+st[i].eng + ","
-					+st[i].math + ","
+					+st[i].math + ",총점"
 					+st[i].tot + ","
 					+st[i].avg + ","
 					+st[i].score + "," +
+					st[i].rank +
 					"\n";
 		}
 		System.out.println(msg);
@@ -78,4 +80,23 @@ public class Students {
 		System.out.println("반 국 영 수 평균" + msg);
 	}
 	
+	public void rank(Student[] st) {
+		int tmp;
+		for (int i = 0; i < st.length; i++) {
+			
+			for (int j = 0; j < st.length; j++) {
+				if(st[i].tot<st[j].tot) {
+					st[i].rank = st[i].rank +1;
+				}
+			}
+			
+//			tmp	= st[min].num;
+//			st[min].num= st[i].num;
+//			st[i].num = tmp;
+			
+		}
+		for (int i = 0; i < st.length; i++) {
+			System.out.println(st[i].rank+1 + "등 : " + st[i].name + " 총점 : " + st[i].tot);
+		}
+	}
 }
