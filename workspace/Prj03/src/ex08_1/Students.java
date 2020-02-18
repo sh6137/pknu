@@ -81,9 +81,9 @@ public class Students {
 	}
 	
 	public void rank(Student[] st) {
-		int tmp;
+		
 		for (int i = 0; i < st.length; i++) {
-			
+			st[i].rank = 1;
 			for (int j = 0; j < st.length; j++) {
 				if(st[i].tot<st[j].tot) {
 					st[i].rank = st[i].rank +1;
@@ -96,7 +96,7 @@ public class Students {
 			
 		}
 		for (int i = 0; i < st.length; i++) {
-			System.out.println(st[i].rank+1 + "등 : " + st[i].name + " 총점 : " + st[i].tot);
+			System.out.println(st[i].rank + "등 : " + st[i].name + " 총점 : " + st[i].tot);
 		}
 	}
 }
