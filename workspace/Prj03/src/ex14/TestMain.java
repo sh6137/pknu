@@ -16,7 +16,7 @@ public class TestMain {
 		//life(cat1,"참치");
 		life(dog, "참");
 		
-		Animal beast = new Animal();
+	//	Animal beast = new Animal();
 	}
 
 	private static void life(Animal pet, String food) {
