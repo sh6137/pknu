@@ -23,7 +23,7 @@ public class TestMain {
 400,D,20090101,260.0,30
 500,E,20120101,350.0,40
 600,F,20170101,195.0,50
-
+asdasdas
 
 	*/
 	static final int ROWS=6;
