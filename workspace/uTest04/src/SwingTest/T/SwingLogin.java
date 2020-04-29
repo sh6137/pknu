@@ -63,7 +63,7 @@ public class SwingLogin extends JFrame {
 				
 				String result = null;
 				
-				File            file = new File("member.dat");  // (.clss)assembly 가 존재하는 경로(현재 경로)
+				File            file = new File("E:\\pknu\\workspace\\uTest04\\src\\SwingTest\\T\\member.dat");  // (.clss)assembly 가 존재하는 경로(현재 경로)
 				FileReader      fr   = null;
 				BufferedReader  br   = null;
 				try {
