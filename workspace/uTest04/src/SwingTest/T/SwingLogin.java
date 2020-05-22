@@ -12,6 +12,7 @@ import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -29,12 +30,14 @@ public class SwingLogin extends JFrame {
 		
 		JTextField  txtUserID = new JTextField(10);
 		this.add(  txtUserID  );
+		txtUserID.setText("sky");
 		
 		JLabel     lblPassword = new JLabel("암호");
 		this.add( lblPassword );
 
 		JPasswordField   pwPass = new JPasswordField(10);
 		this.add(pwPass);
+		pwPass.setText("blue");
 		
 		JButton    btnOk = new JButton("로그인");
 		this.add(btnOk);
@@ -72,10 +75,11 @@ public class SwingLogin extends JFrame {
 					
 					String line = ""; 
 					while( (line = br.readLine()) != null  ) {
-						if( line.startsWith(uid)  ) {
+						String [] mem   = line.split(",");
+						String  memid   = mem[0];  
+						if( memid.equals(uid)  ) {
 							// 아이디가 있다
-							String [] mem   = line.split(",");
-							String  memid   = mem[0];  
+							
 							String  mempass = mem[1];  
 							String  memname = mem[2];
 							
@@ -109,7 +113,16 @@ public class SwingLogin extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("취소 버튼을 클릭하였습니다");				
+				String message = "취소 버튼을 클릭하였습니다.";
+				String title = "로그인 취소";
+				System.out.println(message);
+				//1.
+				JOptionPane.showMessageDialog(null, message, title, JOptionPane.WARNING_MESSAGE);
+				//2.
+				JOptionPane.showConfirmDialog(null, message, title, JOptionPane.OK_CANCEL_OPTION);
+				//3.
+				String problem = JOptionPane.showInputDialog(null, "뭐가문제", "문제들", JOptionPane.OK_CANCEL_OPTION);
+				System.out.println(problem);
 			}
 		});
 		
