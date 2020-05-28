@@ -1,27 +1,28 @@
-package ex04;
+package ex06;
 
 public class Student {
-<<<<<<< HEAD
-	private int		stnum;
-	private String	stname;
-	private String	tel;
-	private String	indate;
+	// Fielss
+	private  int     stnum;
+	private  String  stname;
+	private  String  tel;
+	private  String  indate;
 	
-	
-=======
-	private  int      stnum;
-	private  String   stname;
-	private  String   tel;
-	private  String   indate;
->>>>>>> 41c882846d9359085f78a3d8cad0e677e64ea61c
-	
+	// Constructor
+	public Student() {}
 	public Student(int stnum, String stname, String tel, String indate) {
+		
 		this.stnum = stnum;
 		this.stname = stname;
 		this.tel = tel;
 		this.indate = indate;
 	}
-<<<<<<< HEAD
+
+	public Student(String stname, String tel) {
+		this.stname = stname;
+		this.tel = tel;
+	}
+	
+	// getter /setter
 	public int getStnum() {
 		return stnum;
 	}
@@ -47,14 +48,9 @@ public class Student {
 		this.indate = indate;
 	}
 	
-=======
-
->>>>>>> 41c882846d9359085f78a3d8cad0e677e64ea61c
+	// toString 
 	@Override
 	public String toString() {
 		return "Student [stnum=" + stnum + ", stname=" + stname + ", tel=" + tel + ", indate=" + indate + "]";
 	}
-	
-	
-	
 }
