@@ -14,7 +14,8 @@
 		for (var i = 0; i < nums.length; i++) {
 			msg += nums[i] + '&nbsp;&nbsp;';
 		}
-			
+			msg += '<br>';
+			nums.forEach()
 		div1.innerHTML = msg;
 	}
 
