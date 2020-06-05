@@ -1,0 +1,44 @@
+파일조작
+
+1. 대상파일을 지정하고 사용하겠다고 한다.
+open()
+사용권 점유
+2.읽고 / 쓴다
+read() /write()
+
+3.사용해제
+close()
+
+파일종류
+1.TextFile
+.txt
+.java, .c .cs
+.xml, .json, .properties 
+
+2.Binary File
+.gif, .jpg
+.mp3
+.mp4 .avi
+
+3.변형 Text+Binary ->Binary 로 조작
+.hwp
+
+
+
+	true				false
+	기존(o) 기존(x) 		기존(o) 		기존(x)
+쓰기	append new file		overwite	new file
+	뒤에추가	뒤에추가		덮어쓰기		새로생성
+	
+	
+aa	bbb	cc
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
