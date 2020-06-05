@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+  /* document.write('<h1>hello</h1>'); */
+  console.log('1');
+  window.alert('a');
+  var box = document.getElementById('box'); // null :그려지않아 못 찾믕
+  box.innerHTML  = 'hello' ; 
+</script>
+</head>
+<body>
+<div id="box"></div>
+<div id="box2"></div>
+<script> 
+ /* document.write('<h2>hello</h2>'); */
+  console.log('2')
+  alert('b');
+  var box2 = document.getElementById('box2');
+  box2.innerHTML  = typeof 'hello2'; 
+</script>
+</body>
+</html>
