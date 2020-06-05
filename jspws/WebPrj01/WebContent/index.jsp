@@ -1,30 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<% 
-    /* jsp : 자바 명령어 코딩 */
-    String name = "민성";
-    String msg  = "jsp 잘되나";
-%>    
-
+<%
+	//jsp  : wkqk 명령어 코딩
+	String name = "이름";
+	String msg = "jsp test";
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-<style>
-
-</style>
-<script>
-
+<script type="text/javascript">
+alert('1');
 </script>
 
+
 </head>
-<body>
-   <h1>Hello JSP 한글 잘 되나 </h1>
-   <%  out.print( name + "<br>" );    %>
-   <%  out.print( msg );  %><br>
-   <%= msg  %><br>
+<body onload="alert('2')">
+
+ <h1>hello jsp 한글 잘됨?</h1>
+ <%out.print(name +"<br>"+ msg); %><br>
+ <%= msg %>
+<script>
+	alert('3');
+</script>
 </body>
 </html>
