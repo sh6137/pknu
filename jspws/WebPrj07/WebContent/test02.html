@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.onload = function() {
+	/*  var obj = {
+		num:1,
+		name:'태화',
+		age:19
+	 };
+	 alert(  JSON.stringify(obj) );
+	 console.log(  JSON.stringify(obj) ); */
+	  var btn = document.querySelector('button');	  
+	  var url = 'http://localhost:9090/WebPrj07/GetDataJSON';
+	  btn.onclick = function( e ) {		
+		 var xhr = new XMLHttpRequest();
+		 xhr.onreadystatechange = function() {			 
+			 if(xhr.readyState == 4) {   				 
+				 if(xhr.status == 200) {  
+					 var data = xhr.responseText; // 도착한 데이터
+					 			
+					 var divs    = document.querySelectorAll('div');
+					 //var jsonStr = '{"num":1,"name":"태화","age":19}';
+					 var mans  = JSON.parse( data );
+					 var msg = '';
+					 for(var i in mans) {
+						 msg += '<ul>'; 
+					     msg += '<li>' + mans[i].num + '</li>';
+					     msg += '<li>' + mans[i].name + '</li>';
+					     msg += '<li>' + mans[i].age +  '</li>';
+						 msg += '</ul>';
+						 divs[i].innerHTML = msg;
+					 }
+				 }
+			 }
+		 }		 
+		 var stext = document.querySelector('div').value;
+		 xhr.open('GET', url, true);
+		 xhr.send(null);
+	  }
+ }  
+
+</script>
+</head>
+<body>
+<button>Get Data</button>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

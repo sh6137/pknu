@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1><%out.print("dd"); %></h1>
+	<%
+		String title = "hello jsp";%>
+		<h1> <%= title %> </h1>
+	%>
 </body>
 </html>
