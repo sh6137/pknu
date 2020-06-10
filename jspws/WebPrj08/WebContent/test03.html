@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<title>회원가입</title>
+<style>
+   #main {margin : 0px auto; width : 800px;}
+   table, td {border : 1px solid;
+             border-collapse : collapse;
+   }
+   td: nth-of-type(1) {width : 150px;}
+   td: nth-of-type(2) {width : 607px;}
+   td                 {padding : 10px;}
+   td[colspan]        {text-align: center;}
+   input[type = text]        {width: 600px;}
+</style>
+
+<script>
+   window.onload = function() {
+      
+      //옛날방식
+      //var txt = document.forms[0].elements[0].value;
+      
+      //새로운방식
+      var form = document.getElementsByName('myForm')[0];
+      form.onsubmit = function (e) {
+         // input validation
+         var result = inputCheck();
+         var r = false;
+         switch(result) {
+         case 0:r = true; break;
+         case 1: alert('아이디를 입력하세요'); break;
+         case 2: alert('암호를 입력하세요'); break;
+         case 3: alert('이름을 입력하세요'); break;
+         }
+         
+         return r;
+         //e.stopPropagation(); // 이벤트 버블(상위로 전달)을 중지한다.  
+         //e.preventDefault();  // 기본이벤트 능력방해
+         
+      }
+
+   }
+   
+   function inputCheck() {
+      
+      var userid   = document.getElementById('userid');
+      if(userid.value.trim() == '') return 1;
+      var userpass = document.getElementById('userpass');
+      if(userpass.value.trim() == '') return 2;
+      var username = document.getElementById('username');
+      if(username.value.trim() == '') return 3;
+      
+      return 0;
+   }
+</script>
+</head>
+
+<body>
+   <div id = "main">
+   
+      <form action = "http://localhost:9090/WebPrj08/get" method = "POST"
+         onsubmit="return inputCheck()" name = "myForm">
+      <table>
+      <caption>회원가입</caption>
+      <tr>
+         <td>아이디</td>
+         <td><input type="text" name = "userid" id = "userid" value = "a"></td>
+      </tr>
+      <tr>
+         <td>암호</td>
+         <td><input type="password" name = "userpass" id = "userpass" value = "b"></td>
+      </tr>
+      <tr>
+         <td>암호확인</td>
+         <td><input type="password" name = "userpass2" id = "userpass2" value = "b"></td>
+      </tr>
+      <tr>
+         <td>이름</td>
+         <td><input type="text" name = "username" id = "username" value = "c"></td>
+      </tr>
+      <tr>
+         <td colspan = "2">
+         <input type = "submit" value = "가입" />
+      </tr>
+      </table>
+      </form>
+   </div>
+</body>
+</html>
