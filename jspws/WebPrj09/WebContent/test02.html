@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function () {
+	var id02 = document.getElementById('id02');
+	var id01 = document.getElementById('id01');
+	var div1 = document.getElementById('div1');
+	//div1.innerHTML = id01.innerHTML;
+	//div1.innerHTML = id01.firstChild.nodeValue;
+	div1.innerHTML = id01.childNodes[0].nodeValue;
+	console.dir(div1);
+	div1.onclick = function() {
+		alert(this.innerHTML);
+	}
+	console.dir(div1);
+}
+</script>
+</head>
+<body>
+ <h1 id= "id01">myfirst page</h1>
+ <h1 id= "id02">hello</h1>
+ <div id="div1"></div>
+</body>
+</html>

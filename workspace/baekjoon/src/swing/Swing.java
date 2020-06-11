@@ -1,11 +1,10 @@
-package swingproject;
+package swing;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import net.miginfocom.swing.MigLayout;
 
-public class test1 {
+public class Swing {
 
 	private JFrame frame;
 
@@ -16,7 +15,7 @@ public class test1 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					test1 window = new test1();
+					Swing window = new Swing();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -28,7 +27,7 @@ public class test1 {
 	/**
 	 * Create the application.
 	 */
-	public test1() {
+	public Swing() {
 		initialize();
 	}
 
@@ -37,7 +36,7 @@ public class test1 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 700);
+		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title id = "demo"><h1>Dom tutorial</h1></title>
+<script>
+window.onload = function () {
+	
+
+	var txt = document.getElementById('demo').innerHTML;
+	alert(txt);
+	var txt2 = document.getElementById('demo').innerText;
+	alert(txt2);
+	var txt3 = document.getElementById('demo').firstChild.nodeValue;
+	alert(txt3);
+	var demo = document.getElementById('demo').firstChild;
+	console.log(demo);
+	var txt4 = demo.nodeValue;
+	alert(txt4);
+	document.getElementById('div1').innerHTML = txt;
+	document.getElementById('div2').innerHTML = txt2;
+	document.getElementById('div3').innerHTML = txt3;
+	document.getElementById('div4').innerHTML = txt4;
+}
+</script>
+</head>
+<body>
+	<div id = "div1"></div>
+	<div id = "div2"></div>
+	<div id = "div3"></div>
+	<div id = "div4"></div>
+</body>
+</html>

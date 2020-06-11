@@ -1,13 +1,10 @@
-package swingproject;
+package swing;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import java.awt.Button;
 
-public class test2 {
+public class Swing {
 
 	private JFrame frame;
 
@@ -18,7 +15,7 @@ public class test2 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					test2 window = new test2();
+					Swing window = new Swing();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,7 +27,7 @@ public class test2 {
 	/**
 	 * Create the application.
 	 */
-	public test2() {
+	public Swing() {
 		initialize();
 	}
 
@@ -39,16 +36,8 @@ public class test2 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 700);
+		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(122, 58, 188, 95);
-		frame.getContentPane().add(lblNewLabel);
-		
-		Button button = new Button("New button");
-		button.setBounds(122, 159, 188, 57);
-		frame.getContentPane().add(button);
 	}
+
 }
