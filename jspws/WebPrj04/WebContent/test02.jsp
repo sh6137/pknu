@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<<<<<<< HEAD
+</head>
+<body>
+
+=======
 <style>
    ul, li { padding:0; margind:0;   }
    li { list-style-type:none;   }
@@ -34,5 +39,6 @@
     </ul>
   </div>
   <input type="button" value="제출" />
+>>>>>>> 8f63dc4e2ec54903335ee1fe17fed7e9dde32071
 </body>
 </html>
