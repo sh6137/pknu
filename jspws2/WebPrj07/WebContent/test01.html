@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//Aj
+	window.onload = function() {
+		var btn = document.querySelector('input[type=button]');
+		console.log(btn);
+		var url ='http://localhost:9090/WebPrj07/GetData';
+		btn.onclick = function(e){
+			//서버에서 데이터를 가져와라
+			//페이지를 변경하지않고 서버의 데이터가져온다
+			//비동기 호출 : AsynchronousCall
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState == 4){ //data 가 다 도착하면
+					if(xhr.status == 200){
+						var data = xhr.responseText;
+						alert(data);
+						document.querySelector('#data').innerHTML = data;
+					}
+				}
+			}
+			var stext = document.querySelector('[name = num]').value;
+			xhr.open('GET',url +'?num='+ stext,true);
+			xhr.send(null);
+		}
+	}
+</script>
+</head>
+<body>
+	<div id = "data"></div>
+	찾을번호 : <input type="text" name="num" value ="1">
+	<input type = "button" value = "Get Data">
+</body>
+</html>

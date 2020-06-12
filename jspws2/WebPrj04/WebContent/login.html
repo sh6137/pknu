@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+  function input_check() {
+	  var uid  = document.getElementById('uid');
+	  var pwd  = document.getElementById('pwd');
+	  if( uid.value == '' || pwd.value == '' ) {
+		  alert('아이디나 암호를 입력하세욤');
+	  	  return false;
+	  } 	  
+	  else
+	  	  return true;
+  }
+</script>
+</head>
+<body>
+
+<form action="http://210.119.12.120:9090/WebPrj04/loginok.jsp" method="GET"
+        onsubmit="return input_check()"   >
+아이디<input type="text"   name="userid" id="uid" /><br>
+암호<input type="password" name="passwd" id="pwd" /><br>
+<input type="submit" />
+</form>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+  input[type=text]  { color:red;  }
+  input[value='취미추가'] { color:blue; }
+ /* #email   { background-color:yellow;  } */
+</style>
+<script>
+/*
+  document.getElementById('uid')         // id="" 속성이용         , 결과 1개
+  document.getElementsByTagName('input')   // tag이름  input , div , 결과 여러개 : 배열
+  var div = document.getElementsByName('userid')  // name="" 속성사용 , 결과 여러개 : 배열
+     결과가 하나이라도 반드시 배열표기법으로 접근해여함  : div[0]  
+  document.getElementsByClassName('') // class="" 속성 사용 , 결과 여러개 : 배열
+  document.querySelector('input[type=text] ')  // css selctor 사용 , 결과 한 개    
+  document.querySelectorAll()    // css selector 사용 , 결과 여러개 : 배열
+*/
+
+  function inputInfo( e ) {
+	  // 1.  document.getElementsByTagName('input')
+	  //console.log( e );
+	  //var btn  = e.target;
+	  var userid   =  document.getElementsByName('userid'); // 무조건 배열생성
+	  var userid_v =  userid[0].value;  
+	  var msg = userid_v  + '\n';	 
+	  
+	  var gender   =  document.getElementsByName('gender');
+	  if(gender[0].checked) msg += '남자\n';
+	  if(gender[1].checked) msg += '여자\n';
+	  
+	  var input     =  document.getElementsByTagName('input');  
+	  var username  =  input[2].value;   // 이름: input[2]	  
+	  msg += username + '\n';
+	  
+	  var passwd    =  input[1].value;   // 암호
+	  msg += passwd  + '\n';
+	  
+	  var tel       = document.getElementsByClassName("tel");
+	  var tel_v     = tel[0].value + '-' + tel[1].value + '-' + tel[2].value;
+	  msg += tel_v + '\n';
+	  
+	  var email    = document.querySelector('#email');	  
+	  msg += email.value + '\n';
+	      
+	  alert(msg);
+  }
+
+  var  hoobys = [ 
+      { id: 'cbBasketBall', value:'농구'  },
+      { id: 'cbFootBall',   value:'축구'  },
+      { id: 'cbGolf',       value:'골프'  },
+      { id: 'cbFootSal',       value:'풋살'  },
+      { id: 'cbSwim',       value:'수영'  }
+  ];  
+ 
+  window.onload = function() {
+	  var btnInfo = document.getElementById('btnInfo'); 
+	  btnInfo.onclick = inputInfo;
+	  
+	  var btnHoobyAdd = document.querySelectorAll('input[value=\'취미추가\']');
+	  btnHoobyAdd[0].onclick = function() {
+		  alert('btnHoobyAdd Clicked');
+		//  var divHobby = document.querySelector('.hobby');
+		//  divHobby.innerHTML = '농구, 축구, 골프, 풋살, 수영'; 
+		  var divHobby = document.querySelectorAll('.hobby');
+		  console.log( divHobby );
+		  divHobby[0].innerHTML = '농구, 축구, 골프, 풋살, 수영';
+		  
+		  var hobbyList = '';
+		  hoobys.forEach( function( hobby, index, array ) {
+		      hobbyList += '<input type="checkbox" name="hobby" value="'
+		                  + hobby.value  + '" id="' + hobby.id +  '" />';
+		      hobbyList += '<label for="' + hobby.id + '">' 
+		                  +  hobby.value + '</label>';
+		  });
+		  divHobby[1].innerHTML = hobbyList; 
+	  }
+  }
+</script>
+</head>
+<body>
+  <form action="test01_proc.jsp" method="GET" >
+  *아이디<input type="text"    name="userid"   value="sky" /><br />
+  *암호<input type="password"  name="passwd"   value="1234" /><br />
+  *이름<input type="text"      name="username" value="하늘"/><br />  
+  이메일<input type="text"    name="email" value="hanul@naver.com" id="email"/><br />
+  전화<input type="text"    name="tel1"  value="010"  size="4" maxlenmgth="3"  class="tel" />-
+       <input type="text"   name="tel2"  value="1020" size="4" maxlenmgth="4"  class="tel" />-
+       <input type="text"   name="tel3"  value="0909" size="4" maxlenmgth="4"  class="tel" /><br />
+  성별<input type="radio"     name="gender" id="man" />남자     
+       <input type="radio"    name="gender" id="woman" checked="checked" />여자     
+  <div class="hobby"></div>
+  <div class="hobby"></div>
+  <input type="submit" value="회원가입" />    
+  <input type="image" src="" />      
+  <button>가입</button>    
+  
+  <input type="button" value="취미추가"  />    
+  <input type="button" value="입력정보확인" id="btnInfo" />    
+  </form>
+</body>
+</html>

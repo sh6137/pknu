@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ a{color:black; text-decoration: none;
+ 	border: 1px solid black;
+ }
+ a:hover {
+	color: red; background-color: blue;
+}
+</style>
+<script type="text/javascript">
+	//a tag 를 버튼처럼 사용하겠다.
+	//바로 이동하지 않고 일처리 후 이동
+	var loc = [
+		{title : '네이버', href:'http://www.naver.com'}
+		{title : '네이트', href:'http://www.nate.com'}
+		{title : '다음', href:'http://www.daum.net'}
+		{title : '구글', href:'http://www.google.net'}
+	];
+	function selInit() {
+		var select = document.querySelector('select[name=loc]');
+		var optionList = null;
+		loc.forEach(function(value,index){
+			var loc = value;
+			var option = document.createElement('option');
+			var txt = document.createTextNode(loc.title);
+				option.appendChild(txt);
+			var attr = document.createAttribute("value");
+			attr.value = loc.href;
+			option.setAttributeNode(attr);
+		
+			select.appendChild(option);
+		});
+		/* select.appendChild(optionList) */
+	}
+	window.onload = function() {
+		var a1 = document.getElementById('a1');
+		selectInit();
+		
+		a1.onclick = function (e) {
+			// alert("네이버로가기");
+			
+			e.preventDefault(); //기존 이벤트의 실행 방해
+			e.stopPropagation();
+			var select = document.getElementsByName('loc')[0];
+			var selText = select{0};
+			alert('로 간다.')
+			alert("네이버로가기");
+			location.href = 'https://www.naver.com';
+		
+		}
+	}
+</script>
+</head>
+<body>
+	<select name ="loc">
+		
+	</select>
+	<a id="a1" href="https://www.naver.com">네이버</a>
+	
+</body>
+</html>

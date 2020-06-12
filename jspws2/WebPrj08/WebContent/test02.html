@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+ var hello = () =>{
+	document.body.innerHTML += 'Hello 월드'; 
+ }
+ //window.onload = hello;
+ window.addEventListener ('load',hello) ;
+ </script>
+</head>
+
+<body>
+<button>Click</button>
+<p id = "p1">
+<script>
+var btn = document.getElementsByTagName('button')[0];
+btn.addEventListener('click',hello);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var msg = '';
+function getDupId() {
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET','http://localhost:9090/WebPrj11/GetMember?userid=sky',true);
+	xhr.send();
+	msg=xhr.responseText;
+}
+window.onload = function () {
+	
+	var btnCheck = document.getElementById('btnCheck');
+	btnCheck.onclick= function(){
+		var dupMsg = document.getElementById("dupMsg");
+		getDupId();
+		dupMsg.innerHTML = getDupId();
+	}
+}
+
+</script>
+</head>
+<body>
+	<form action="http://localhost:9090/WebPrj11/RegMember" method="get">
+	아이디<input type = "text" name = "userid">
+	<input type = "button" value = "중복확인" id = "btnCheck">
+	<span id="dupMsg"></span>
+	암호<input type="password" name="userpass"><br>
+	<input type="submit" value = "가입">
+	</form>
+</body>
+</html>

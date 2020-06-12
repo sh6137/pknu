@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dd</title>
+<script>
+window.onload = function(){
+	var btn1 = document.getElementById('btn1');
+	var div1 = document.getElementById('div1');
+	var div2 = document.getElementById('div2');
+	var div3 = document.getElementById('div3');
+	var div4 = document.getElementById('div4');
+	btn1.addEventListener('click', function(event){
+		console.log(event);
+		var btn = event.srcElement || ebent.target;
+		alert(btn.innerHTML);
+		//만들기 : <h1>this is new</h1>
+		var h1 = document.createElement('h1'); //메모리 만듬
+		var txt = document.createTextNode('this is new');
+		h1.appendChild(txt);
+		div1.appendChild(h1);
+		
+		//--------------------
+		/* <ul>
+		<li>사과</li>
+		<li>사과</li>
+		<li>사과</li>
+		</ul>
+		 */
+		var ul = document.createElement('ul');//<ul></ul>
+		var li1 = document.createElement('li');
+		var txt1= document.createTextNode('사과');
+		li1.appendChild(txt1);
+		ul.appendChild(li1);
+		
+		var li2 = document.createElement('li');
+		var txt2= document.createTextNode('배');
+		li2.appendChild(txt2);
+		ul.appendChild(li2);
+		
+		var li3 = document.createElement('li');
+		var txt3= document.createTextNode('딸기');
+		li3.appendChild(txt3);
+		ul.appendChild(li3);
+		
+		div2.appendChild(ul);
+		
+		//var fruits = ['Apple','Banana','Kiwi','Mango']
+		
+		
+		var fruits = ['Apple','Banana','Kiwi','Mango'];
+		alert(fruits[0]);
+		var select = document.createElement('select');
+		var option1 = document.createElement('option');
+		var txt4= document.createTextNode(fruits[0]);
+		option1.appendChild(txt4);
+		select.appendChild(option1);
+		
+		var option2 = document.createElement('option');
+		var txt5= document.createTextNode(fruits[1]);
+		option2.appendChild(txt5);
+		select.appendChild(option2);
+		
+		var option3 = document.createElement('option');
+		var txt6= document.createTextNode(fruits[2]);
+		option3.appendChild(txt6);
+		select.appendChild(option3);
+		
+		var option4 = document.createElement('option');
+		var txt7= document.createTextNode(fruits[3]);
+		option4.appendChild(txt7);
+		select.appendChild(option4);
+		
+		div3.appendChild(select);
+		
+		//var fruits = ['Apple','Banana','Kiwi','Mango']
+		
+		var label = document.createElement('label');
+		var input = document.createElement('input');
+		input.setAttribute("type", "radio");
+		input.setAttribute("name", "fruits");
+		input.value = fruits[0];
+		label.appendChild(input);
+		var text= document.createTextNode(input.value);
+		label.appendChild(text);
+		
+		div4.appendChild(label);
+		
+		var label1 = document.createElement('label');
+		var input1 = document.createElement('input');
+		input1.setAttribute("type", "radio");
+		input1.setAttribute("name", "fruits");
+		input1.value = fruits[1];
+		label1.appendChild(input1);
+		var text1= document.createTextNode(input1.value);
+		label1.appendChild(text1);
+		
+		
+		div4.appendChild(label1);
+		
+		var label2 = document.createElement('label');
+		var input2 = document.createElement('input');
+		input2.setAttribute("type", "radio");
+		input2.setAttribute("name", "fruits");
+		input2.value = fruits[2];
+		label2.appendChild(input2);
+		var text2= document.createTextNode(input2.value);
+		label2.appendChild(text2);
+		
+		
+		div4.appendChild(label2);
+		
+		var label3 = document.createElement('label');
+		var input3 = document.createElement('input');
+		input3.setAttribute("type", "radio");
+		input3.setAttribute("name", "fruits");
+		input3.value = fruits[3];
+		label3.appendChild(input3);
+		var text3= document.createTextNode(input3.value);
+		label3.appendChild(text3);
+		
+		
+		div4.appendChild(label3);
+	});
+}
+</script>
+</head>
+
+<body>
+
+<button id="btn1">만들기</button>
+<div id = "div1"></div>
+<div id = "div2"></div>
+<div id = "div3"></div>
+<div id = "div4"></div>
+</body>
+</html>
