@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+	.rec1{
+		width:300px; height: 300px;
+		background-color: yellow;
+		position:  absolute;
+		font-size: 40px;
+		top: 100px;
+		left: 100px;
+		z-index : 100;
+	}
+	.rec2{
+		width:500px; height: 200px;
+		background-color: blue;
+		position:  absolute;
+		font-size: 40px;
+		top: 100px;
+		left: 100px;
+		
+	}
+	.rec3{
+		width:200px; height: 500px;
+		background-color: green;
+		position:  absolute;
+		font-size: 40px;
+		top: 100px;
+		left: 100px;
+	}
+	
+	</style>
+	
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	  
+	<script>
+	var px ="";
+		function ani(){
+			for (var i = 0; i < 100000 i++) {
+				px = (100+(i/10000)) + "px";
+				$(".rec10").css("left",px);
+			}
+		}
+	</script>  
+</head>
+<body>
+	<div class ="rec1">12</div>
+	<div class ="rec2"></div>
+	<div class ="rec3"></div>
+	
+	<div>
+		<input type = "button" value="확인"> 
+	</div>
+
+</body>
+</html>

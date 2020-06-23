@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>Insert title here</title>
+   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+   <script>
+      var strHTML = "";
+      
+      function te() {
+         strHTML += ' onload() ';
+      }
+      
+      $(document).ready(
+         function() {
+            strHTML += ' ready ';
+         }
+      );
+      
+      $(function() {
+         strHTML += ' jquery_func ';         
+      });
+      
+      function result() {
+         $('#test').html(strHTML);
+      }
+   </script>
+</head>
+<body onload="te()">
+   <div id="test"></div>
+   <input type="button" value="확인" onclick="result()"/>
+</body>
+</html>

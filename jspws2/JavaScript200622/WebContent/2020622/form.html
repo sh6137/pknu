@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+   function checkValue(){
+      var objGens = document.getElementsByName('gender');
+      
+      var n = 0; 
+      for (var i = 0; i < objGens.length; i++) {
+         if(objGens[i].checked == true){
+            n += 1;
+         }
+      }
+      
+      if(n == 0){
+         alert('라디오 버튼 체크');
+         return;
+      }
+      
+      var objJob = document.getElementById('job');
+       if(objJob.value.length == 0){
+          alert("직업 선택하세요")
+          return;
+       }
+      var objHobby  = document.getElementsByName("hobby");
+      var hCount = 0;
+      for (var i = 0; i < objHobby.length; i++) {
+          if(objHobby[i].checked){
+               hCount +=1;
+            }
+         }
+      
+         if(hCount ==0){
+            alert("취미를 선택하세요!");
+            return; 
+      }
+
+
+   }
+</script>
+</head>
+<body>
+<form name = "" action = "" method = "">
+   <!-- text -->
+   <div>
+   아이디 : <input type = "text" name = "mid" id = "mid" size = "15" maxlength = "5" placeholder = "아이디를 입력하세요"/>
+   </div>
+   
+   <div>
+   <!-- radio -->
+   성별 : <input type = "radio" name = "gender" value = "M"/>남자 <!-- value는 서버에서 넘어갈 때 값 -->
+      <input type = "radio" name = "gender" value = "F"/>여자 <!-- name이 다를 경우 각각이 radio로 인식 -->
+   </div>
+   
+   <div>
+   <!-- select -->
+   직업 : <select name = "job" id = "job">
+         <option value = "">선택할래</option>
+         <option value = "job1">의사</option><!-- option의 value값은 코드값 -->
+         <option value = "job2">프로그래머</option>
+         <option value = "job3">교수</option>
+   </select>
+   </div>
+   
+   <div>
+   <!-- checkBox -->
+   취미 : <input type = "checkbox" name = "hobby" value = "1" checked/>자기
+      <input type = "checkbox" name = "hobby" value = "2"/>먹기
+      <input type = "checkbox" name = "hobby" value = "3"/>놀기
+   </div>
+   
+   <div>
+         <textarea rows="6" cols="50" id ="con"></textarea>
+    </div> 
+   
+   <div>
+      <input type = "button" value = "확인" onclick = "checkValue()"/>
+   </div>
+</form>
+
+</body>
+</html>

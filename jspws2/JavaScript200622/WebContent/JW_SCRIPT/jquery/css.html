@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.ttt{
+		border:3px solid blue;
+	}
+</style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script type="text/javascript">
+  	function t() {
+	//	$("#ddd").css("font-size","40px");
+	document.getElementById("ddd").style.fontSize = "40px";
+	
+	// document.getElementById("test").size = "40";
+	//document.getElementById("test").type = "button";
+	
+	document.getElementById("test").style = "border:3px solid red";
+
+  	}
+  	
+  </script>
+</head>
+<body>
+	<div id = "ddd">가나다라</div>
+	<input type="text" id="test" size="10">
+	<input type="text" id="test" class ="ttt" size="10">
+	<input type="button" value = "확인" onclick ="t()">
+</body>
+</html>

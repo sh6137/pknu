@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script type="text/javascript">
+function t(){
+	alert($("#gender2").prop("checked"));
+	alert($("#gender2").prop("type"));
+
+	//유효성검사
+	$(".gen").each(
+		function(index, item){
+			alert($(item).prop("checked"));
+		}		
+	)
+	var obj = document.getElementById("gender1");
+	
+		
+}
+
+</script>
+</head>
+<body>
+	<input type="radio" id="gender1" name="gender" class="gen" > 남자
+	<input type="radio" id="gender2" name="gender" class="gen"> 여자
+	<input type="button" value="확인" onclick="t()">
+</body>
+</html>

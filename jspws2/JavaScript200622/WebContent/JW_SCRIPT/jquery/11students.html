@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+ <script src= "https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script>
+var students = [
+   
+   {sid : "s001", sname : "송지현", age : 28, gender : "고자"},
+   {sid : "s002", sname : "손형호", age : 28, gender : "남자"},
+   {sid : "s003", sname : "권태화", age : 27, gender : "남자"},
+   {sid : "s004", sname : "서효성", age : 28, gender : "남자"},
+   {sid : "s005", sname : "김상두", age : 28, gender : "남자"},
+];
+
+$(document).ready(
+         function() {
+            
+            $("#search_btn").click(
+               function()   {
+                  searchFunc();
+               }            
+            );
+         }
+      );
+      
+      var searchFunc = function() {
+         
+         var strHTML = "";
+         
+/*          for (var i = 0; i < students.length; i++) {
+            strHTML += "<tr>";
+            strHTML += "<td width = '100' height = '30', align = 'align'>";
+            strHTML += students[i].sid;
+            strHTML += "</td>"
+            strHTML += "<td width = '150' height = '30', align = 'align'>";
+            strHTML += students[i].sname;
+            strHTML += "</td>"
+            strHTML += "<td width = '50' height = '30', align = 'align'>";
+            strHTML += students[i].age;
+            strHTML += "</td>"
+            strHTML += "<td width = '100' height = '30', align = 'align'>";
+            strHTML += students[i].gender;
+            strHTML += "</td>"
+            strHTML += "</tr>"
+         }
+         
+         $("#searchTbl").append(strHTML);
+          */
+         
+         //2.each
+         //2. each
+        $.each(students, 
+              function(index, item){
+                 strHTML += "<tr>";
+                 
+                 strHTML += "<td width = '100px' height = '30px' align = 'center'>";
+                 strHTML += item.sid;
+                 strHTML += "</td>";
+                 
+                 strHTML += "<td width = '150px' height = '30px' align = 'center'>";
+                 strHTML += item.sname;
+                 strHTML += "</td>";
+                 
+                 strHTML += "<td width = '50px' height = '30px' align = 'center'>";
+                 strHTML += item.age;
+                 strHTML += "</td>";
+                 
+                 strHTML += "<td width = '100px' height = '30px' align = 'center'>";
+                 strHTML += item.gender;
+                 strHTML += "</td>";
+                 
+                 strHTML += "</tr>";
+           }
+        );
+        
+        $("#searchTbl").append(strHTML);
+         
+      }; 
+
+
+
+ 
+      
+</script>
+</head>
+<body>
+   <table border = "1" cellpading = "0" cellspacing = "0" width = "400px" align = "center">
+      <tr>
+         <td width = "400px" align="right" height = "40">
+            <input type="button" value = "조회" id = "search_btn"/>
+         </td>
+      </tr>
+   </table>
+   <table border = "1" cellpading = "0" cellspacing = "0" width = "400px" align = "center" id = searchTbl>
+   <tr>
+      <td width = "100px" height = "30px" align = "center">아이디
+      </td>
+      <td width = "150px" height = "30px" align = "center">이름
+      </td>
+      <td width = "50px" height = "30px" align = "center">나이
+      </td>
+      <td width = "100px" height = "30px" align = "center">성별
+      </td>
+   </tr>
+   </table>
+</body>
+</html>

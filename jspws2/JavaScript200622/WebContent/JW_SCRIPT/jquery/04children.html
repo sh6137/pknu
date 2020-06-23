@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ .menu1{
+ 	width: 408px; background-color: red;
+ 	height: 70px;
+ 	position: relative;
+ }
+ .menu2{
+ 	width:100px;background-color: #dddddd; height : 30px; display: block; float : left;
+ 	border: 1px solid blue; text-align: center;
+ 	padding: 10px 0px 0px 0px;
+ 	margin: 15px 0px 15px 0px;
+ }
+</style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script type="text/javascript">
+  function test() {
+		var obj = $(".menu1").children();
+	
+		for (var i = 0; i < obj.length; i++) {
+			obj[i].innerHTML = "aaaaa";
+		}
+	}
+  </script>
+</head>
+<body>
+	<div class="menu1">
+		<span class="menu2">메뉴1</span>
+		<span class="menu2">메뉴2</span>
+		<span class="menu2">메뉴3</span>
+		<span class="menu2">메뉴4</span>
+	
+	</div>
+	<div>
+		<input type="button" value="확인" onclick="test()" id="btn">
+	</div>
+</body>
+</html>

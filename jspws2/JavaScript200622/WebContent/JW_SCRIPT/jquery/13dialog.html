@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<link href="./jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+<script src="./jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+<script src="./jquery-ui-1.12.1/jquery-ui.js"></script>
+  <script>
+   $(document).ready(
+         
+       function(){
+         
+          $("#info").dialog(
+            {
+                autoOpen : false,
+                show : {
+                   effect : "blind",
+                   duration : 2000
+                }
+            }    
+            );
+          $("#infoBtn").click(      
+             function(){
+               $("#info").dialog("open");
+                        
+            });   
+          $("#infoBtn2").click(      
+             function(){
+               $("#info").dialog("close");
+                        
+            });   
+         
+      });
+</script>
+
+</head>
+<body>
+ 
+<div id="info" title="공지사항">
+  <p> 가나다라 마바사</p>
+</div>
+<div>
+	<input type="button" value="확인" id="infoBtn">
+	<input type="button" value="닫기" id="infoBtn2">
+</div>
+ 
+ 
+</body>
+</html>

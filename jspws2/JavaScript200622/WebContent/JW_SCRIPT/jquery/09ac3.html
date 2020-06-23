@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.menu{height :100px;}
+	.submenu{width: 180px; background-color: #e1e6f6; border: 1px solid red;}
+</style>
+<link href="./jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+<script src="./jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+<script src="./jquery-ui-1.12.1/jquery-ui.js"></script>
+
+<script type="text/javascript">
+
+var menus = [];
+
+menus = [
+   {menuId : "m001", menu : "1번 메뉴", menuLink : "1.jsp"},
+   {menuId : "m002", menu : "2번 메뉴", menuLink : "2.jsp"},
+   {menuId : "m003", menu : "3번 메뉴", menuLink : "3.jsp"},
+   {menuId : "m004", menu : "4번 메뉴", menuLink : "4.jsp"}
+];
+
+var menus2 = [];
+menus2 = [
+   {menuId : "m005", menu : "즐겨찾기", menuLink : "5번메뉴"},
+   {menuId : "m006", menu : "편집", menuLink : "6번메뉴"}
+];
+
+var menus3 = [];
+menus3 = [
+   {menuId : "m007", menu : "서브메뉴1", menuLink : "5번메뉴"},
+   {menuId : "m008", menu : "서브메뉴2", menuLink : "6번메뉴"},
+   {menuId : "m009", menu : "서브메뉴3", menuLink : "7번메뉴"}
+];
+
+var submenus = [];
+submenus[0] = menus;
+submenus[1] = menus2;
+submenus[2] = menus3;
+
+
+
+$(document).ready(
+   function(){
+      var strMenuHTML = "";
+      
+      var objMenus = $(".menu");
+      
+      $( "#accordion" ).accordion();
+      
+      for (var i = 0; i < submenus.length; i++) {
+         strMenuHTML = "";
+         $.each(submenus[i],
+            function(index, item){
+               strMenuHTML += "<div class = 'submenu'><a href = '" + item.menuLink +"'>" + item.menu + "</a></div>";      
+            }      
+         );
+         
+         $(objMenus[i]).html(strMenuHTML);
+      }
+   }
+);
+</script>
+</head>
+<body>
+
+
+<!-- Accordion -->
+<h2 class="demoHeaders">Accordion</h2>
+<div style = "width:200px">
+
+	<div id="accordion">
+		<div>First</div>
+		<div id = "menu1" class = "menu" style="padding: 0 0 0 0px;">
+			<div><a href = "1.jsp">1번메뉴</a>
+			</div>
+		</div>
+		<div>Second</div>
+		<div id="menu2" class="menu" style="padding: 0px 0px 0px 0px;">
+		
+		<div><a href = "1.jsp">2번메뉴</a></div>
+		</div>
+		<div>Third</div>
+		<div id="menu3" class="menu" style="padding: 0px 0px 0px 0px;">
+		<div><a href = "1.jsp">2번메뉴</a></div>
+		</div>
+	</div>
+</div>
+
+
+
+
+</body>
+</html>

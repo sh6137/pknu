@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#show{
+	font-size:12px; 
+}
+</style>
+<script type="text/javascript">
+	function test() {
+		var arr =[];
+		arr[0] = "홍길동";
+		arr[1] = "전우치";
+		arr[2] = "백설공주";
+
+		var obj = null;
+		for(var i = 0; i<arr.length; i++){
+			obj = document.getElementById("show");
+			obj.innerHTML += "<div>" + arr[i] + "</div>";
+		}
+	}
+	
+</script>
+</head>
+<body>
+<!-- <input type="text" size="8" name = "num1" id = "num1">
+	
+	<input type="text" size="8" name = "num2" id = "num2">
+ -->
+ 	<div id ="show"> 
+ 	
+ 	</div>
+	<input type="button" value="확인" onclick="test()">
+</body>
+</html>
