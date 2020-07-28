@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.cchk{border:1px solid #444444; font-size:20px; color:#222222; float:left; width:50px; height:30px}
+.cid{border:1px solid #444444; font-size:20px; color:#222222; float:left; width:100px; height:30px}
+.cname{border:1px solid #444444; font-size:20px; color:#222222; float:left; width:100px; height:30px}
+.ctel{border:1px solid #444444; font-size:20px; color:#222222; float:left; width:170px; height:30px}
+.caddr{border:1px solid #444444; font-size:20px; color:#222222; float:left; width:250px; height:30px}
+.cdept{border:1px solid #444444; font-size:20px; color:#222222; float:left; width:280px; height:30px}
+.title, .list{clear:both;}

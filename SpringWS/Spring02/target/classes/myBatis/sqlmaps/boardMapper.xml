@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+	<select id="BoardList" resultType="com.pknu.board.vo.BoardVo">
+	
+	SELECT IDX, TITLE, NAME, TO_CHAR(REGDATE,'YYYY-MM-DD') AS REGDATE 
+	 FROM GUESTS
+	 ORDER BY IDX DESC
+	</select>
+	
+	<select id="BoardContent" resultType="com.pknu.board.vo.BoardVo">
+	SELECT IDX, TITLE, NAME, TO_CHAR(REGDATE,'YYYY-MM-DD HH24:MI:SS DAY AM ') AS REGDATE 
+	 FROM GUESTS
+	 WHERE IDX = #{idx}
+	</select>
+	<insert id="BoardWrite">
+		INSERT INTO GUESTS(IDX,TITLE,NAME,REGDATE)
+		 VALUES(
+		 (SELECT NVL(MAX(IDX),0)+1 FROM GUESTS),
+		 #{title},
+		 #{name},
+		 SYSDATE
+		 )
+	</insert>
+	
+	<delete id="BoardDelete">
+		DELETE FROM GUESTS
+		 WHERE IDX=#{idx}
+	</delete>
+	
+	<update id="BoardUpdate">
+		UPDATE GUESTS
+		 SET	TITLE=#{title}, NAME = #{name}
+		 WHERE IDX = #{idx}
+	</update>
+	<!-- 
+	<update id="BoardIdxSer">
+	UPDATE GUESTS
+	 SET IDX = IDX-1
+	 WHERE IDX > #{idx}
+	</update>
+	 -->
+</mapper>
