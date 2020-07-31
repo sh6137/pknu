@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<script>
+  $(function() {
+	  $('#btn1').on('click', function(e) {
+		  $.ajax({
+			  url      : '/ajax',
+			  data     : {v:'890'},
+			  dataType : 'json',
+			  success  : function( data ) {
+				  console.log(data);
+				  alert(data);
+				  var html  = '<div>id:' + data.id + '<div>';
+				  html     += '<div>pass:' + data.pass + '<div>';
+				  html     += '<div>v:' + data.v + '<div>';
+				  
+				  $('#div1').html(html);
+			  },
+			  error : function(xhr) {
+				  console.log(xhr);
+				  alert('오류:' + xhr.status);
+			  }
+			  
+		  })
+	  })
+  });
+</script>
+<body>
+   <h1>이것은 html</h1>
+   <button id="btn1">Ok</button>
+   <div id="div1"></div>
+</body>
+</html>
