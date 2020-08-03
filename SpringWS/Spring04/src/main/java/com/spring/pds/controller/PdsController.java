@@ -27,9 +27,14 @@ public class PdsController {
 	public ModelAndView pdsList(
 		@RequestParam HashMap<String, Object> map) {
 		
+		List<MenuVo> pdsList = pdsService.getList(map);
 		List<MenuVo> menuList = menuService.getList(map);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("menuList", menuList);
+		
+		mv.addObject("pagePdsVo", pagePdsVo);
+		
+		
 		mv.addObject("menu_id", map.get("menu_id"));
 		mv.setViewName("pds/list");
 		return mv;

@@ -14,8 +14,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.spring.menu.vo.MenuVo;
 import com.spring.pds.dao.PdsDao;
 import com.spring.pds.service.PdsService;
+import com.spring.pds.vo.PdsVo;
 
 @Service("pdsService")
 
@@ -81,5 +83,16 @@ public class PdsServiceimpl implements PdsService {
 		
 		//2.db 저장
 		pdsDao.setWrite(map);
+	}
+
+	@Override
+	public List<PdsVo> getList(HashMap<String, Object> map) {
+		
+		int pagetotalcount = 10;
+		int pagecount = 2;
+		
+		List<PdsVo> pdsList = pdsDao.getList(map);
+		return null;
+		
 	}
 }

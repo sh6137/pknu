@@ -32,8 +32,9 @@ public class PdsVo {
 	private int prevnowpage; //[이전] 에 사용할 nowpage 
 	private int nextnowpage; //[다음] 에 사용할 nowpage
 	
-	private int totalcount; //전체 자료수 123건
-	private int totalpgaecount; //전체 자료수 13페이지
+	private int recordcount; //전체 자료수 123건
+	
+	private int totalPagecount; //전체 자료수 13페이지
 	
 	private int pagestartnum; //페이지 시작번호 (한화면)
 	private int pageendnum; // 페이지 끝번호 (한화면)
@@ -152,17 +153,17 @@ public class PdsVo {
 	public void setNextnowpage(int nextnowpage) {
 		this.nextnowpage = nextnowpage;
 	}
-	public int getTotalcount() {
-		return totalcount;
+	public int getRecordcount() {
+		return recordcount;
 	}
-	public void setTotalcount(int totalcount) {
-		this.totalcount = totalcount;
+	public void setRecordcount(int recordcount) {
+		this.recordcount = recordcount;
 	}
-	public int getTotalpgaecount() {
-		return totalpgaecount;
+	public int getTotalPagecount() {
+		return totalPagecount;
 	}
-	public void setTotalpgaecount(int totalpgaecount) {
-		this.totalpgaecount = totalpgaecount;
+	public void setTotalPagecount(int totalpgaecount) {
+		this.totalPagecount = totalpgaecount;
 	}
 	public int getPagestartnum() {
 		return pagestartnum;
@@ -207,10 +208,11 @@ public class PdsVo {
 				+ regdate + ", readcount=" + readcount + ", bnum=" + bnum + ", lvl=" + lvl + ", step=" + step
 				+ ", nref=" + nref + ", delnum=" + delnum + ", menu_id=" + menu_id + ", menu_name=" + menu_name
 				+ ", menu_seq=" + menu_seq + ", filescount=" + filescount + ", nowpage=" + nowpage + ", prevnowpage="
-				+ prevnowpage + ", nextnowpage=" + nextnowpage + ", totalcount=" + totalcount + ", totalpgaecount="
-				+ totalpgaecount + ", pagestartnum=" + pagestartnum + ", pageendnum=" + pageendnum + ", pagegrpnum="
+				+ prevnowpage + ", nextnowpage=" + nextnowpage + ", recordcount=" + recordcount + ", totalpgaecount="
+				+ totalPagecount + ", pagestartnum=" + pagestartnum + ", pageendnum=" + pageendnum + ", pagegrpnum="
 				+ pagegrpnum + ", pagecount=" + pagecount + ", isshowpageprev=" + isshowpageprev + ", isshowpagenext="
 				+ isshowpagenext + "]";
 	}
+	
 	
 }

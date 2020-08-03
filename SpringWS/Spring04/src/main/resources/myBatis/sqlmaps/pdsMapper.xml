@@ -29,7 +29,7 @@
         #{menu_id,     mode=IN,  jdbcType=VARCHAR },        
         #{nowpage,     mode=IN,  jdbcType=INTEGER },
         #{pagecount,   mode=IN,  jdbcType=INTEGER },
-        #{totalcount,  mode=OUT, jdbcType=INTEGER },        
+        #{recordcount,  mode=OUT, jdbcType=INTEGER },        
         #{result,  mode=OUT, jdbcType=CURSOR, javaType=ResultSet,
              resultMap=PDSListMap }
       )}          
