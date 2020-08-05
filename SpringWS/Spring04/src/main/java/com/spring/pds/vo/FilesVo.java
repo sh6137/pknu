@@ -1,11 +1,14 @@
 package com.spring.pds.vo;
 
 public class FilesVo {
-	private int file_num;
-	private int idx;
-	private String filename;
-	private String fileext;
-	private String sfilename;
+	
+	private  int     file_num;
+	private  int     idx;
+	private  String  filename;
+	private  String  fileext;
+	private  String  sfilename;
+	
+	
 	public int getFile_num() {
 		return file_num;
 	}
@@ -36,12 +39,12 @@ public class FilesVo {
 	public void setSfilename(String sfilename) {
 		this.sfilename = sfilename;
 	}
+	
 	@Override
 	public String toString() {
 		return "FilesVo [file_num=" + file_num + ", idx=" + idx + ", filename=" + filename + ", fileext=" + fileext
 				+ ", sfilename=" + sfilename + "]";
 	}
-	
 	
 	
 }

@@ -7,11 +7,11 @@
     <tr>
      <c:forEach var="menuVo" items="${ menuList }">       
       <td>
-      <a href="/PDS/List?menu_id=${ menuVo.menu_id }">
+      <a href="/PDS/List?menu_id=${ menuVo.menu_id }&nowpage=1&pagecount=${pagePdsVo.pagecount}&pagegrpnum=1">
          ${ menuVo.menu_name }
       </a>
       </td>      
       </c:forEach>      
     </tr>
   </table>
-   하하하하하
+

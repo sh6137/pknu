@@ -26,7 +26,7 @@ public class TempController {
 		String a = request.getParameter("a");
 		String b = request.getParameter("b");
 		
-		HttpSession session = request.getSession()
+		HttpSession session = request.getSession();
 		
 		System.out.println("temp1");
 		System.out.println("a="+a);

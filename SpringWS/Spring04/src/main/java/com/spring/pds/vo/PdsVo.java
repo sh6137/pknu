@@ -1,50 +1,58 @@
 package com.spring.pds.vo;
 
 public class PdsVo {
-	//게시물(Board)
-	private int idx;
-	private String title;
-	private String cont;
-	private String writer;
-	private String regdate;
-	private int readcount;
-	//답글처리
-	private int bnum; //글번호
-	private int lvl; //답변단계
-	private int step; //출력순서
-	private int nref; // 글 그룹 번허
+
+	// 게시물 (Board)
+	private   int       idx;
+	private   String    title;
+	private   String    cont;
+	private   String    writer;
+	private   String    regdate;
+	private   int       readcount;
 	
-	private int delnum;//글 삭제 여부
+	// 답글 처리
+	private   int       bnum;  // 글번호
+	private   int       lvl;   // 답변단계
+	private   int       step;  // 출력순서
+	private   int       nref;  // 글 그룹번호
 	
-	//메뉴관련
-	private String menu_id; //메뉴 아이디
-	private String menu_name; // 메뉴 이름
-	private String menu_seq;	//메뉴 순서
+	private   int       delnum;  // 글 삭제 여부
 	
+	// 메뉴관련
+	private   String    menu_id;    // 메뉴아이이
+	private   String    menu_name;  // 메뉴이름
+	private   int       menu_seq;   // 메뉴순서
 	
-	//-----------------------------------------
-	//출력할 파일의 수
-	private int filescount;
+	////------------------------------------------
+	// 출력할 파일의 수
+	private   int       filescount;
 	
-	//======================
-	//페이징 관련 변수
-	private int nowpage; //현재 페이지 정보
-	private int prevnowpage; //[이전] 에 사용할 nowpage 
-	private int nextnowpage; //[다음] 에 사용할 nowpage
+	//======================================
+	// 페이징 관련 변수
+	private   int       nowpage;            // 현재 페이지 정보
+	private   int       prevnowpage;        // 	[이전]에 사용할 nowpage
+	private   int       nextnowpage;        // 	[다음]에 사용할 nowpage
 	
-	private int recordcount; //전체 자료수 123건
+	private   int       recordcount;         // 전체 자료수   : 123 건
+	public int getRecordcount() {
+		return recordcount;
+	}
+	public void setRecordcount(int recordcount) {
+		this.recordcount = recordcount;
+	}
+
+	private   int       totalpagecount;     // 전체 페이지수 : 13 페이지
 	
-	private int totalPagecount; //전체 자료수 13페이지
+	private   int       pagestartnum;       // 페이지 시작번호 (한화면)
+	private   int       pageendnum;         // 페이지 끝번호   (한화면)
+	private   int       pagegrpnum;       // 페이징 그룹 수
 	
-	private int pagestartnum; //페이지 시작번호 (한화면)
-	private int pageendnum; // 페이지 끝번호 (한화면)
-	private int pagegrpnum; //페이지 그룹 수 
+	private   int       pagecount;          // 1 페이지에 보여줄 자료라인수 10건
 	
-	private int pagecount; //1.페이지에 보여줄 자료라인수 10건
+	private   boolean   isshowpageprev;     
+	private   boolean   isshowpagenext;
 	
-	private boolean isshowpageprev;
-	private boolean isshowpagenext;
-	//
+	// Getter / Setter
 	public int getIdx() {
 		return idx;
 	}
@@ -123,10 +131,10 @@ public class PdsVo {
 	public void setMenu_name(String menu_name) {
 		this.menu_name = menu_name;
 	}
-	public String getMenu_seq() {
+	public int getMenu_seq() {
 		return menu_seq;
 	}
-	public void setMenu_seq(String menu_seq) {
+	public void setMenu_seq(int menu_seq) {
 		this.menu_seq = menu_seq;
 	}
 	public int getFilescount() {
@@ -153,17 +161,12 @@ public class PdsVo {
 	public void setNextnowpage(int nextnowpage) {
 		this.nextnowpage = nextnowpage;
 	}
-	public int getRecordcount() {
-		return recordcount;
+
+	public int getTotalpagecount() {
+		return totalpagecount;
 	}
-	public void setRecordcount(int recordcount) {
-		this.recordcount = recordcount;
-	}
-	public int getTotalPagecount() {
-		return totalPagecount;
-	}
-	public void setTotalPagecount(int totalpgaecount) {
-		this.totalPagecount = totalpgaecount;
+	public void setTotalpagecount(int totalpagecount) {
+		this.totalpagecount = totalpagecount;
 	}
 	public int getPagestartnum() {
 		return pagestartnum;
@@ -201,18 +204,19 @@ public class PdsVo {
 	public void setIsshowpagenext(boolean isshowpagenext) {
 		this.isshowpagenext = isshowpagenext;
 	}
-	//toString
+	
 	@Override
 	public String toString() {
 		return "PdsVo [idx=" + idx + ", title=" + title + ", cont=" + cont + ", writer=" + writer + ", regdate="
 				+ regdate + ", readcount=" + readcount + ", bnum=" + bnum + ", lvl=" + lvl + ", step=" + step
 				+ ", nref=" + nref + ", delnum=" + delnum + ", menu_id=" + menu_id + ", menu_name=" + menu_name
 				+ ", menu_seq=" + menu_seq + ", filescount=" + filescount + ", nowpage=" + nowpage + ", prevnowpage="
-				+ prevnowpage + ", nextnowpage=" + nextnowpage + ", recordcount=" + recordcount + ", totalpgaecount="
-				+ totalPagecount + ", pagestartnum=" + pagestartnum + ", pageendnum=" + pageendnum + ", pagegrpnum="
+				+ prevnowpage + ", nextnowpage=" + nextnowpage + ", recordcount=" + recordcount + ", totalpagecount="
+				+ totalpagecount + ", pagestartnum=" + pagestartnum + ", pageendnum=" + pageendnum + ", pagegrpnum="
 				+ pagegrpnum + ", pagecount=" + pagecount + ", isshowpageprev=" + isshowpageprev + ", isshowpagenext="
 				+ isshowpagenext + "]";
 	}
 	
+  
 	
 }

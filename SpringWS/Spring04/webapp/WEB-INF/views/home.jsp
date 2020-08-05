@@ -15,7 +15,7 @@
    <p>
    <p><a href="/Menus/List">메뉴관리</a></p>
    <p>
-   <p><a href="/PDS/List?menu_id=MENU01">자료실</a></p>
+   <p><a href="/PDS/List?menu_id=MENU01&nowpage=1&pagecount=2&pagegrpnum=1">자료실(Paging)</a></p>
    
 </body>
 </html>

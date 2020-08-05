@@ -3,6 +3,7 @@ package com.spring.pds.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import com.spring.pds.vo.FilesVo;
 import com.spring.pds.vo.PdsVo;
 
 public interface PdsDao {
@@ -10,5 +11,11 @@ public interface PdsDao {
 	void setWrite(HashMap<String, Object> map);
 
 	List<PdsVo> getList(HashMap<String, Object> map);
+
+	PdsVo getContent(HashMap<String, Object> map);
+
+	List<FilesVo> getFileList(HashMap<String, Object> map);
+
+	void setUpdate(HashMap<String, Object> map);
 
 }
