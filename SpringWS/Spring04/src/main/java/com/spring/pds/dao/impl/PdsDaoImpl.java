@@ -30,6 +30,7 @@ public class PdsDaoImpl implements PdsDao {
 		sqlSession.selectList("PDS.PdsList", map);
 		List<PdsVo> pdsList = (List<PdsVo>) map.get("result") ;
 		//System.out.println( "recordcount:" + map.get("recordcount") );
+		System.out.println("Dao" + pdsList);
 		
 		return pdsList;
 	}

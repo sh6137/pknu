@@ -172,7 +172,10 @@ public class PdsController {
 		mv.addObject("pagegrpnum",  map.get("pagegrpnum"));	
 		mv.addObject("pagecount",  map.get("pagecount"));	
 		
-		mv.setViewName("redirect:/PDS/List");
+		mv.setViewName("redirect:/PDS/List?pagecount=" +  map.get("pagecount")
+		  +	"&nowpage=" + map.get("nowpage")
+		  + "&pagegrpnum=" + map.get("pagegrpnum")
+		  + "&menu_id=" +  map.get("menu_id") );
 		return mv;
 	}  
 	

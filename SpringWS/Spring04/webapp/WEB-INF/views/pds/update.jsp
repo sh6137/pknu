@@ -52,6 +52,10 @@
    <!-- 자료 입력 -->
    <form id="form1" action="/PDS/Update" method="POST" enctype="multipart/form-data">   
    <input type="hidden"  name="idx" value="${ pdsVo.idx }" />
+   <input type="hidden"  name="menu_id" value="${ pdsVo.menu_id }" />
+   <input type="hidden"  name="nowpage" value="${ pdsVo.nowpage }" />
+   <input type="hidden"  name="pagecount" value="${ pdsVo.pagecount }" />
+   <input type="hidden"  name="pagegrpnum" value="${ pdsVo.pagegrpnum }" />
    <table>
    <tr>
      <td>작성자</td>

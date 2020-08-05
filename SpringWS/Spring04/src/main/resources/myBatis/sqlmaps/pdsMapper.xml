@@ -13,7 +13,7 @@
       <result property="writer"     column=""  javaType="string" />
       <result property="regdate"    column=""  javaType="string" />
       <result property="readcount"  column=""  javaType="int" />
-      <result property="bnum"        column="" javaType="int" />
+      <result property="bnum"       column="" javaType="int" />
       <result property="lvl"        column=""  javaType="int" />
       <result property="step"       column=""  javaType="int" />
       <result property="nref"       column=""  javaType="int" />    

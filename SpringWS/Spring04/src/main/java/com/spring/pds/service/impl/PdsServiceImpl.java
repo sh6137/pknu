@@ -96,7 +96,7 @@ public class PdsServiceImpl implements PdsService {
 				
 		List<PdsVo> pdsList  = pdsDao.getList( map );
 		System.out.println();
-		
+		System.out.println("pdsservice "+pdsList);
 		int nowpage     =  Integer.valueOf( (String) map.get("nowpage") );
 		int pagegrpnum  =  Integer.valueOf( (String) map.get("pagegrpnum"));
 		
