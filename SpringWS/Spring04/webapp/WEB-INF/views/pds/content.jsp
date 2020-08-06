@@ -64,7 +64,7 @@
         <a href="/PDS/WriteForm?menu_id=${pdsVo.menu_id}&bnum=0&lvl=0&step=0&nref=0&nowpage=${nowpage}&pagecount=2&pagegrpnum=${pagegrpnum}">새글쓰기</a>
         <a href="/PDS/WriteForm?menu_id=${pdsVo.menu_id}&bnum=${pdsVo.bnum}&lvl=${pdsVo.lvl}&step=${pdsVo.step}&nref=${pdsVo.nref}&nowpage=${nowpage}&pagecount=2&pagegrpnum=${pagegrpnum}">답글쓰기</a>
         <a href="/PDS/UpdateForm?idx=${pdsVo.idx}&menu_id=${pdsVo.menu_id}&nowpage=${nowpage}&pagecount=2&pagegrpnum=${pagegrpnum}">수정</a>
-        <a href="">삭제</a>
+        <a href="/PDS/Delete?idx=${pdsVo.idx}&lvl=${pdsVo.lvl}&step=${pdsVo.step}&nref=${pdsVo.nref}&menu_id=${pdsVo.menu_id}&nowpage=${nowpage}&pagecount=2&pagegrpnum=${pagegrpnum}">삭제</a>
         <a href="/PDS/List?menu_id=<c:out value='${map.menu_id}' />">목록</a>        
      </td>        
    </tr> 
