@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<style>
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+
+</script>
+
+</head>
+<body>
+  <!-- 
+    Internal page : 같은 페이지안에서 페이지 이동
+    External page : 외부 도메인에 존재하는 페이지 불러오기(Ajax 방식)
+    Local    Page : 같은 도에인 안에서 불러오기(Ajax 방식)
+    non Ajax  방식은 rel="external" 속성으로 처리
+    -->
+
+  <div  data-role="page">
+    <div data-role="header" data-theme="b">
+       <h1>Mobile</h1>
+    </div>
+   
+    <div data-role="content">
+   
+      <a href="http://m.naver.com" data-role="button">External Page</a>
+      <a href="http://m.nate.com" data-role="button" rel="external">External Page</a>
+      <a href="otherpage.html" data-role="button">Local page</a>
+      <a href="tel:010-1234-5678" class="ui-btn ui-corner-all">전화걸기</a>
+      <a href="mailto:ne@naver.com" data-role="button"">mail Link</a>
+      <a href="mailto:ne@naver.com?subject=Hello@body=World...!" 
+         data-role="button"">mail Link</a>
+            
+    </div>
+   
+    <div data-role="footer" data-theme="b">
+        <h1>footer</h1>
+    </div>
+  
+  </div>
+
+
+
+
+   
+</body>
+</html> 

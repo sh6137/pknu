@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<style>
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+  $(document).on('pagebeforecreate', function() {
+	  $('a').click(function(event) {
+		  var href = $(this).attr('href');  
+		  $.mobile.loading('show', {
+				text        : href + '로 이동합니다',
+				textVisible : true
+		  });  	
+		  
+		  event.preventDefault();		 
+		  
+		  setTimeout(function() {
+	  			$.mobile.loading('hide');	
+	  			// 페이지를 이동한다
+	  			$.mobile.changePage(href);
+	  		}, 2000)
+	  });
+  });
+	  
+</script>
+
+</head>
+<body>
+  <div  data-role="page">
+    <div data-role="header" data-theme="b">
+       <h1>Mobile</h1>
+    </div>
+   
+    <div data-role="content">
+       <h1>here is First page</h1>
+       <a href="otherpage.html" data-role="button">Move to Second Page</a>            
+       <a href="otherpage2.html" data-role="button">Move to Second Page</a>            
+    </div>
+   
+    <div data-role="footer" data-theme="b">
+        <h1>footer</h1>
+    </div>
+  
+  </div>
+
+
+
+
+   
+</body>
+</html> 

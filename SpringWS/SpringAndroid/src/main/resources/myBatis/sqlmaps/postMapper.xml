@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="Post">
+        
+     <select id="getList"         
+         parameterType="hashmap" 
+         resultType="com.pknu.post.vo.PostVo">
+         
+         SELECT   ZIPCODE, SIDO, GUGUN, DONG,
+                  NVL(BUNJI, ' ') AS BUNJI , 
+                  SEQ
+          FROM    TPOST  
+          WHERE   DONG   = #{dong}           
+              
+     </select>       
+    
+             
+  </mapper>        
+

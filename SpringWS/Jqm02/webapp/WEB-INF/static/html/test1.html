@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<style>
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script>
+  $(document).on('mobileinit', function() {
+	  // 추가되는 모든 페이지에 back button 을 자동으로 추가 
+	   $.mobile.toolbar.prototype.options.addBackBtn = true; 
+  });
+  
+  $(document).on( {
+	  'pagebeforecreate' : function() {  alert('page before create');  },
+	  'pagecreate'       : function() {  alert('page create');  },
+	  'pagebeforechange' : function() {  alert('page before change');  },
+	  'pagechange'       : function() {  alert('page change');  },
+	  'pagechangefailt'  : function() {  alert('page change');  }	  
+     }
+  );
+  
+  
+</script>
+
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+  $( function() {
+	  
+  } );
+</script>
+
+</head>
+<body>
+  <div  data-role="page">
+    <div data-role="header" data-theme="b">
+       <h1>Mobile</h1>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview">
+        <li><a href="#">List Item 1</a></li>
+        <li><a href="#">List Item 2</a></li>
+        <li><a href="#">List Item 3</a></li>
+        <li><a href="#">List Item 4</a></li>     
+      </ul>   >
+    </div>
+    <div data-role="footer" data-theme="b">
+        <h1>footer</h1>
+    </div>
+  
+  </div>
+
+
+
+
+   
+</body>
+</html> 

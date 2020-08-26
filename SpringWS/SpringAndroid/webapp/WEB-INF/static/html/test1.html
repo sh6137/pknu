@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+     table, td { border:1px solid black;
+         border-collapse: collapse;; 
+     }
+     table  { width:80%; margin:0 auto; }
+     td {  text-align: center;   }
+  </style>
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script>
+    $(function() {
+	    // Ok 버튼 클릭
+    	$('body').on('click', '#btnJson', function() {
+		      alert('aaaa');
+			  //$('body').append('<button>Ok</button>');
+			  $.ajax({
+			     url : '/json',
+				 success : function(data) {
+					 var result = JSON.parse(data);
+				     console.log(result);
+					 alert(result);
+					 alert(result.name)
+				 }			  
+			  });		  
+		});
+ 
+	    //  주소찾기 버튼클릭
+	    $('body').on('click', '#btnAddr', function(e) {
+	    	console.log(e);
+	    	alert('bbbb');
+	    	$.post('/getPost', { dong : $('#dong').val() }, function(data) {	    		
+	    		console.log(data);
+	    		alert(data);
+	    		var html = '<table>';
+	    		html += '<caption><h1>'+data.dong+'</h1></caption>';
+	    		html += '<tr>';
+	    		html += '<td>우편번호</td>';
+	    		html += '<td>시도</td>';
+	    		html += '<td>구군</td>';
+	    		html += '<td>동</td>';
+	    		html += '<td>번지</td>';
+	    		html += '<td>seq</td>';
+	    		html += '</tr>';
+	    		$.each(data.postList, function(index, post) {
+	    	    	html += '<tr>';
+	    	    	html += '<td>' +  post.zipcode  + '</td>';
+	    	    	html += '<td>' +  post.sido     + '</td>';
+	    	    	html += '<td>' +  post.gugun    + '</td>';
+	    	    	html += '<td>' +  post.dong     + '</td>';
+	    	    	html += '<td>' +  post.bunji    + '</td>';
+	    	    	html += '<td>' +  post.seq      + '</td>';
+	    	    	html += '</tr>';	    		
+	    		});
+	    		
+	    		html += '</table>';
+	    		$('#div1').html(html);
+	    	});	    	
+	    });
+	    
+	    $('#div1').on('mouseover', 'tr',  function() {
+	    	$(this).css({"background-color" : "yellow" });
+	    });
+	    $('#div1').on('mouseout', 'tr',  function() {
+	    	$(this).css({"background-color" : "white" });
+	    });
+	    
+	});
+  </script>
+</head>
+<body>
+  동명<input type="text" id="dong" />
+  <button id="btnAddr">주소검색</button>
+  <button id="btnJson">Ok</button>
+  <div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<style>
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+
+</script>
+
+</head>
+<body>
+  <div  data-role="page">
+   <!--
+        push    : 기존화면을 밀면서 패널 생성
+        reveal  : 기존화면을 밀며 서서히 패널을 생성합니다
+        overlay : 기존화면 위에 패널을 생성합니다 
+     -->
+  
+  
+     <div data-role="panel" id="panel" data-position="right" data-display="overlay">
+        <h1>Panel</h1>
+        <a href="#" data-rel="close">Close pabel</a>
+        <p>he standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+     </div>  
+  
+    <div data-role="header" data-theme="b">
+       <h1>Mobile</h1>
+    </div>
+   
+    <div data-role="content">
+   		<a href="#panel" class="btn">Open Panel</a>   
+    </div>
+   
+    <div data-role="footer" data-theme="b">
+        <h1>footer</h1>
+    </div>
+  
+  </div>
+
+
+
+
+   
+</body>
+</html> 
+</html>

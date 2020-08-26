@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<style>
+   .ui-li-thumb, .ui-li-icon {
+     left:1px;
+     height: 80px;
+     width: 80px;
+     position : absolute;
+     top : 0;    
+  }
+</style>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+  // 전역변수 선언
+  var emp_idx = 0;     // 선택한 idx 
+  var emp     = null;  // 선택한 객체 정보 
+  
+  //  페이지가 바뀌면 현제 페잊 정보를 출력
+  $( document ).on('pageshow', function() {
+	  var currPageId  = $.mobile.activePage.attr('id');
+	  switch( currPageId  ) {
+	  case 'mainpage':   // 첫번째 페이지
+		  var empList;
+	  	  $('ul').empty();	
+		  $.get('/getemplist', function(result){
+			 console.log(result);
+			 var html     = '';
+			 empList  = result.emplist; 
+			 empList.forEach( ( emp ) => {
+				 html += '<li>';
+				 html += '<a href="#secondpage">';
+				 html += '<img class="ui-li-thumb" src="/img/' + emp.name + '.jpg" /> ';
+				 html += '<h3>' + emp.title   + '</h3>';
+				 html += '<p>' +  emp.name    + '</p>';
+				 html += '<p>' +  emp.regdate + '</p>';
+				 html += '<span class="ui-li-count">' +  emp.idx + '</span>';				 
+				 html += '</a>';
+				 html += '</li>';
+			 });
+			 $('ul').append(html);
+			 $('ul').listview('refresh');
+			 
+			 // listview 안에 a tag 에 click 이벤트를 연갤한다
+			 $('#mainlist').on('click', 'a',  function(e) {
+				 e.preventDefault();
+				 // console.log();
+				 var emp_idx =  $('span',this).html() 
+				 
+				 // empList 안에 있는 클릭한 idx 의 data 를 찾는다
+				 
+				 
+			 });
+			 
+			 
+		  });
+		  break;
+	  case 'secondpage': // 두번째 페이지
+		  		  
+		  break;	  
+	  }
+	  
+	  
+  });
+
+
+    
+</script>
+
+</head>
+<body>
+
+<!--  첫뻔째 페이지 목록조회-->
+  <div  data-role="page" id="mainpage">
+    <div data-role="header" data-theme="b">
+       <h1>Mobile</h1>      
+    </div>
+    <div data-role="content">    
+       <ul data-role="listview" data-inset="true" id="mainlist">          
+         <li><a href="#secondpage">List item</a></li>
+       </ul>
+    </div>
+    <div data-role="footer" data-theme="b">
+        <h1>footer</h1>
+    </div>
+   </div>
+    
+    <!--  두번쩨 페이지 상제페이지 추가, 수정, 삭제  -->
+    <div  data-role="page" id="secondpage">
+      <div data-role="header" data-theme="b" data-add-back-btn="true">
+       <h1>Mobile</h1>      
+      </div>
+      <div data-role="content">
+        <h1>두번째 페이지 입니다</h1>
+    </div>
+      <div data-role="footer" data-theme="b">
+        <h1>footer</h1>
+      </div>
+    </div>
+
+</body>
+</html> 

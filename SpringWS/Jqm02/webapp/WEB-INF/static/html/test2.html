@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<style>
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+  $( function() {
+	  $('body').on('click', 'button',  function() {
+	//	  $('<button>Add BUTTON</button>').appendTo('div[data-role=content]');
+		  $('div[data-role=content]').append('<button>Add BUTTON</button>')
+		  .append('<button>Add BUTTON</button>');
+		  // 동적으로 추가된 taa는 ui를 강제로 다시 적용헤애한다
+		  $('div[data-role=content]').trigger('create');
+	  })
+  } );
+</script>
+
+</head>
+<body>
+  <div  data-role="page">
+    <div data-role="header" data-theme="b">
+       <h1>Mobile</h1>
+    </div>
+    <div data-role="content">
+       <button>Add Button</button>
+    </div>
+    <div data-role="footer" data-theme="b">
+        <h1>footer</h1>
+    </div>
+  
+  </div>
+
+
+
+
+   
+</body>
+</html> 

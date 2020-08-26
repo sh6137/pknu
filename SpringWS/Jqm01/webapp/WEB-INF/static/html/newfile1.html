@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+    var smartPhones = [
+    	'iphone', 'ipod', 'windows ce', 'android', 'blackberry',
+   	     'nokia', 'webos', 'opera', 'sonyericsson', 'opera mini', 'iemobile'    	
+    ];
+    
+    var isSmart = false;
+    console.log(navigator.userAgent);
+    for ( var i in smartPhones) {
+		if(navigator.userAgent.toLowerCase().match(new RegExp(smartPhones[i]))) {
+		//	alert('스마트 폰입니다');
+		//	document.location='http://m.nate.com';
+			isSmart = true;
+			break;
+		}
+	}
+    
+    if(!isSmart) {
+    //	alert('컴퓨터입니더');
+    	//document.location='http://www.nate.com';
+    } 
+    
+    
+</script>
+</head>
+<body>
+
+</body>
+</html>

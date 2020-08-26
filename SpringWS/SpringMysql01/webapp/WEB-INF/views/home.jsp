@@ -8,5 +8,6 @@
 </head>
 <body>
    <h1>Home</h1>
+   <a href="/List">목록</a>
 </body>
 </html>

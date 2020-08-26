@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<style>
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+
+</script>
+
+</head>
+<body>
+  <!--  첫번쩨 페이지 -->
+  <div  data-role="page">
+    <div data-role="header" data-theme="b">
+       <h1>Mobile</h1>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview">
+        <li><a href="#second-page" data-transition="slide">두번째 페이지</a></li>
+        <li><a href="#second-page" data-transition="slideup">두번째 페이지</a></li>
+        <li><a href="#second-page" data-transition="slidedown">두번째 페이지</a></li>
+        <li data-role="list-divider">Divider</li>
+        <li><a href="#second-page" data-transition="pop">두번째 페이지</a></li>
+        <li><a href="#second-page" data-transition="fade">두번째 페이지</a></li>
+        <li><a href="#second-page" data-transition="flip">두번째 페이지</a></li>
+        <li data-role="list-divider">Divider</li>        
+        <li><a href="#second-page" data-transition="pop" data-rel="dialog">두번째 페이지</a></li>
+        <li><a href="#second-page" data-transition="slidedonw" data-rel="dialog">두번째 페이지</a></li>
+        <li><a href="#second-page" data-transition="flip" data-rel="dialog">두번째 페이지</a></li>             
+      </ul> 
+    </div>
+    <div data-role="footer" data-theme="b">
+        <h1>footer</h1>
+    </div>  
+  </div>
+
+  <!-- 두번째 페이지 -->
+  <div data-role="page"  id="second-page">
+     <div data-role="header" data-theme="b" data-add-back-btn="true">
+         <h1>두번째 페이지</h1>
+     </div>
+     <div data-role="content">
+       <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more </p>
+     </div>
+  
+  </div>
+
+   
+</body>
+</html> 

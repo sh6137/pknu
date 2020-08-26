@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<style>
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+   
+   $(function() {
+	   $('#go').click(function(e) {
+		   e.preventDefault();
+		
+		   /*
+		   $.ajax( {
+			  url      : '/getAddr',
+			  data     : {dong  : $('#dong').val() },
+			  dataType : 'json',
+			 // contentType : 'applciation/json;charset=utf-8',
+			  success : function(jsonArr) {
+				   console.log(jsonArr);
+				   alert(jsonArr);
+				   
+				   var html = '';
+				   $.each(jsonArr, function(index, json) {
+					   html += '<li><a href="#">';
+					   html += '[' + json.zipcode + ']' ;
+					   html += json.sido + ' ' +  json.gugun + ' ' + json.dong; 
+					   html += '</a></li>';
+				   } );
+				   $('ul').append(html);
+				   $('ul').listview('refresh');
+				   
+			  },
+			  error  : function(xhr) {
+				  alert('오류:' + xhr.status + ',' + xhr.textStatus );
+		      }
+		   });  // $.ajax() end
+		   */
+		   
+		   $.getJSON('/getAddrList', { dong : $('#dong').val() }, function(data) {
+			   console.log(data);
+			   alert(data);
+			   
+			   var html = '';
+			   $.each(data.data, function(index , post) {
+				   html += '<li><a href="#">';
+				   html += '(' + post.zipcode + ')';
+				   html +=       post.sido    + ' ';
+				   html +=       post.gugun   + ' ';
+				   html +=       post.dong    +    ' ';		
+				   html += '</a></li>';
+			   })
+			   $('ul').append(html);
+			   $('ul').listview('refresh');
+			   
+		   });
+		   
+		   
+	   }) //  $('#go').click end
+   });  // $() end
+   
+</script>
+
+</head>
+<body>
+  <div  data-role="page">
+    <div data-role="header" data-theme="b">
+       <h1>Mobile</h1>      
+    </div>
+    <div data-role="content">
+       <input type="text"  name="dong" id="dong" value="용당동" />
+       <a href="#" data-role="button" id="go">검색</a>
+       <ul data-role="listview" data-inset="true">
+         <li data-role="list-divider">주소</li> 
+         <li><a href="#">List item</a></li>
+       </ul>
+    </div>
+    <div data-role="footer" data-theme="b">
+        <h1>footer</h1>
+    </div>
+  
+  </div>
+
+
+
+
+   
+</body>
+</html> 
