@@ -28,18 +28,18 @@ public class PostController {
 	
 	@RequestMapping("/getAddrList")	
 	public HashMap<String, Object> getAddrList(
-			@RequestParam HashMap<String, Object>map) {
+		@RequestParam	HashMap<String, Object> map) {
 		PostVo vo1 = new PostVo("010-122", "부산", 
 				"남구", "용당동", "부경대 용당 캠퍼스", 12345 );
 		PostVo vo2 = new PostVo("010-120", "부산", 
 				"남구", "대연동", "부경대 대연 캠퍼스", 12340 );
-		
-		List<PostVo> postList = new ArrayList<>();
+		List<PostVo> postList = new ArrayList<PostVo>();
 		postList.add(vo1);
-		postList.add(vo2);
+		postList.add(vo2);		
 		
 		HashMap<String, Object> newMap = new HashMap<String, Object>();
-		newMap.put("data",postList);
+		newMap.put("userid", "sky");
+		newMap.put("data", postList);
 		return newMap;
 	}
 

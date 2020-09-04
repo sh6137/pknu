@@ -25,7 +25,9 @@ public class UserController {
 	@RequestMapping("/List")
 	public String list(Model model) {
 		List<UserVo> list = userDao.getList();
+		
 		model.addAttribute("userList",list);
+		System.out.println(model.addAttribute("userList",list));
 		return "list";
 	}
 	
@@ -36,6 +38,7 @@ public class UserController {
 	
 	@RequestMapping("/Write")
 	public String write(UserVo vo, Model model) {
+		System.out.println("매개변수" +vo);
 		userDao.addUser(vo);
 		return "redirect:/List";
 	}

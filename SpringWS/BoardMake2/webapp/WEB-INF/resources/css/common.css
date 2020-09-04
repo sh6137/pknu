@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+body {
+	
+}
+a { color:blue; text-decoration:none; }
+a:hover { color:blue; text-decoration:underline; }
+
+a > img { width:12px;  height: :12px;   }
+
+table{width : 70%; margin: auto;}
+
+table, th, td{
+	border : 1px solid black;
+	border-collapse : collapse;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="Menu">
+ 
+ 	<resultMap type="com.spring.menu.vo.MenuVo" id="menuMap">
+ 		<result property="menu_id" column="MENU_ID" javaType="String"/>
+ 		<result property="menu_name" column="MENU_NAME" javaType="String"/>
+ 		<result property="menu_seq" column="MENU_SEQ" javaType="int"/>
+ 	</resultMap>
+ 	
+ 	<select id="MenuList">
+ 	
+ 	
+ 	</select>
+ 
+ 
+ </mapper>
+

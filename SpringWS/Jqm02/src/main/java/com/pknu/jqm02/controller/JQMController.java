@@ -20,7 +20,7 @@ public class JQMController {
 	@RequestMapping("/")
 	public String home() {
 		return "redirect:/static/html/index.html";
-	}
+	} 
 	
 	@RequestMapping("/test1")
 	public String test1() {
@@ -45,6 +45,11 @@ public class JQMController {
 	@RequestMapping("/postlist")
 	public String postlist() {
 		return "redirect:/static/html/postlist.html";
+	}
+	
+	@RequestMapping("/emplist")
+	public String emplist() {
+		return "redirect:/static/html/emplist.html";
 	}
 	
 	

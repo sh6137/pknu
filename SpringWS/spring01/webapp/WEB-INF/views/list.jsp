@@ -28,7 +28,11 @@
 	</div>
 	</c:forEach>
 	<p>
-	
+	<hr>
+	<h1>
+		${userList.get(0).name}
+		
+	</h1>
 
 </body>
 </html>

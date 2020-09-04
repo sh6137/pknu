@@ -19,21 +19,22 @@
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script>
   // 전역변수 선언
-  var emp_idx = 0;     // 선택한 idx 
-  var emp     = null;  // 선택한 객체 정보 
+  var gl_emp_idx = 0;     // 선택한 idx 
+  var gl_emp     = null;  // 선택한 객체 정보 
+  var gl_empList = null;  // 조회한 목록
   
   //  페이지가 바뀌면 현제 페잊 정보를 출력
   $( document ).on('pageshow', function() {
-	  var currPageId  = $.mobile.activePage.attr('id');
+	  var currPageId  = $.mobile.activePage.attr('id');	  
 	  switch( currPageId  ) {
 	  case 'mainpage':   // 첫번째 페이지
-		  var empList;
-	  	  $('ul').empty();	
-		  $.get('/getemplist', function(result){
-			 console.log(result);
-			 var html     = '';
-			 empList  = result.emplist; 
-			 empList.forEach( ( emp ) => {
+	  	  $('#mainlist').empty();	
+	      // $.ajax();
+		  $.get('/getemplist', function(result){ 
+			 //console.log(result);
+			 var html  = '';
+			 gl_empList   = result.emplist; 
+			 gl_empList.forEach( ( emp ) => {
 				 html += '<li>';
 				 html += '<a href="#secondpage">';
 				 html += '<img class="ui-li-thumb" src="/img/' + emp.name + '.jpg" /> ';
@@ -44,30 +45,102 @@
 				 html += '</a>';
 				 html += '</li>';
 			 });
-			 $('ul').append(html);
-			 $('ul').listview('refresh');
-			 
+			 $('#mainlist').append(html);
+			 $('#mainlist').listview('refresh');	
+			 			 
 			 // listview 안에 a tag 에 click 이벤트를 연갤한다
 			 $('#mainlist').on('click', 'a',  function(e) {
-				 e.preventDefault();
-				 // console.log();
-				 var emp_idx =  $('span',this).html() 
+				
+				 e.preventDefault();   // a tag 의 기본능력인 href 롤 페이지 이동능력을 방해한다
+				 e.stopPropagation(); // event bubbling 방지
+				 
+				 // 클릭된 a tag $(this) 안에 있는 span tag 찾는다
+				 gl_emp_idx =  $('span', this).html() 
 				 
 				 // empList 안에 있는 클릭한 idx 의 data 를 찾는다
-				 
-				 
-			 });
-			 
-			 
+				 gl_emp = $( gl_empList ).filter( ( i, emp ) => {
+					return gl_emp_idx == emp.idx;
+					 // return  i % 2 == 0  ;
+				 })[0];  
+				 				 
+				 // href 로 이동하라
+				 var href = $(this).attr('href');
+				 $.mobile.changePage(href);				 
+			 });		 			 
+		  });		  
+	
+		 break;
+		 
+	  case 'secondpage': // 두번째 페이지 (상세 정보 조회)
+		//  alert('클릭한 글번호:' + gl_emp_idx);		  
+		  console.log( gl_emp );
+		  
+		  // data 출력
+		  $('#secondpage  #idx').val(     gl_emp.idx );
+		  $('#secondpage  #title').val(   gl_emp.title );
+		  $('#secondpage  #name').val(    gl_emp.name );
+		  $('#secondpage  #regdate').val( gl_emp.regdate );
+		  
+		  // 각버튼 기능연결
+		  $('#secondpage').on('click', 'a[data-icon]', function() {
+			  switch( $(this).attr("data-icon") ){
+			  case "plus": 
+				  href    = '#addpage';
+				  break;
+			  case "delete": 
+				  // db 데이터 삭제
+				  $.post('/empDelete', { idx : gl_emp_idx }, function() { 
+				  		href    = '#mainpage';
+				  })
+				  break;
+			  case "edit": 
+				  href    = '#editpage';
+				  break;
+			  case "home": 
+				  href    = '#mainpage'; 
+				  break;
+			  }
+			  $.mobile.changePage(href);
+			  return false;  // e.preventDefault() + e.stopPropagation(); 			  
 		  });
-		  break;
-	  case 'secondpage': // 두번째 페이지
-		  		  
+		  
 		  break;	  
-	  }
+		  
+	  case 'addpage':  // 글쓰기
+	  	  $('#addpage').on('click', 'a', function() {
+	  	      switch( $(this).attr('id')  ) {
+	  	      case 'submit': // 귺쓰기(가입)
+	  	    	  $.ajax({
+	  	    		  url : '/addEmp',
+	  	    		  data : {
+	  	    			  title   : $('#addpage #title').val(),
+	  	    			  name    : $('#addpage #name').val(),
+	  	    		      regdate : $('#addpage #regdate').val()		  
+	  	    		  },
+	  	    		  type     : 'POST',
+	  	    		  success  : function(data) {
+	  	    			  $.mobile.changePage('#mainpage');
+	  	    		  },
+	  	    		  error    : function(xhr) {
+	  	    			  alert(xhr.status + ',' + xhr.textStatus);
+	  	    		  }
+	  	    	  });
+	  	    	  break;
+	  	      case 'reset' : // 취소
+	  	    	  break;
+	  	      }	  	      
+	  	      return false;
+	  	  })
+		  break;
+		  
+	  case 'editpage': // 수정 
+		  break;	  
 	  
 	  
-  });
+	  } // switch end
+	  
+	  
+  }); // pageshow end
 
 
     
@@ -75,34 +148,94 @@
 
 </head>
 <body>
-
-<!--  첫뻔째 페이지 목록조회-->
+ <!-- -------------------------------- -->
+ <!--  첫뻔째 페이지 목록조회-->
   <div  data-role="page" id="mainpage">
     <div data-role="header" data-theme="b">
        <h1>Mobile</h1>      
     </div>
     <div data-role="content">    
-       <ul data-role="listview" data-inset="true" id="mainlist">          
-         <li><a href="#secondpage">List item</a></li>
-       </ul>
+       <ul data-role="listview" data-inset="true" id="mainlist"></ul>
     </div>
     <div data-role="footer" data-theme="b">
         <h1>footer</h1>
     </div>
    </div>
-    
+  
+  <!-- -------------------------------- -->  
     <!--  두번쩨 페이지 상제페이지 추가, 수정, 삭제  -->
-    <div  data-role="page" id="secondpage">
-      <div data-role="header" data-theme="b" data-add-back-btn="true">
-       <h1>Mobile</h1>      
+  <div  data-role="page" id="secondpage">
+    <div data-role="header" data-add-back-btn="true" data-theme="b">
+      <h1>두번째 페이지</h1>
+      <div data-role="navbar">
+     	 <ul id="ulnavbar">
+     	    <li><a href="#" data-icon="plus"  class='ui-btn-active'>Add</a></li>
+     	    <li><a href="#" data-icon="delete">delete</a></li>
+     	    <li><a href="#" data-icon="edit">Edit</a></li>     	         	    
+     	    <li><a href="#" data-icon="home">Home</a></li>     	         	    
+     	 </ul>
       </div>
-      <div data-role="content">
-        <h1>두번째 페이지 입니다</h1>
+    </div>   
+     
+    <div data-role="content">
+        <div data-role="fieldcontatin">
+          <label for="idx">번호</label>
+          <input type="text" id="idx"      readonly="readonly" />
+        </div>
+        <div data-role="fieldcontatin">
+          <label for="title">제목</label>
+          <input type="text" id="title"   readonly="true" />
+        </div>
+        <div data-role="fieldcontatin">
+          <label for="name">이름</label>
+          <input type="text" id="name"     readonly="true" />
+        </div>
+        <div data-role="fieldcontatin">
+          <label for="regdate">날짜</label>
+          <input type="text" id="regdate"  readonly="true" />
+        </div>
     </div>
-      <div data-role="footer" data-theme="b">
-        <h1>footer</h1>
+    
+    <div data-role="footer" data-theme="b">
+        <a href="#" data-icon="plus">plus</a>
+        <a href="#" data-icon="delete">delete</a>
+        <a href="#" data-icon="edit">edit</a>
+        <a href="#" data-icon="home">home</a>
       </div>
-    </div>
+   </div>
+   
+   <!-- --------------------------- -->
+   <!--  세번째 페이지 addpage -->
+   <div data-role="page" id="addpage">
+     <div data-role="header"  data-add-back-btn="true" data-theme="b">
+        <h1>글쓰기</h1>
+     </div> 
+     <div data-role="content">     
+       <form id="addform" method="POST">
+        <div data-role="fieldcontatin">
+          <label for="title">제목</label>
+          <input type="text" id="title" />
+        </div>
+        <div data-role="fieldcontatin">
+          <label for="name">이름</label>
+          <input type="text" id="name"  />
+        </div>
+        <div data-role="fieldcontatin">
+          <label for="regdate">날짜</label>
+          <input type="date" id="regdate"  />
+        </div>
+        <div class="ui-grid-a">
+	       <div class="ui-block-a"> 
+	         <a href="#" data-role="button" id="submit">가입</a>
+	       </div> 
+	       <div class="ui-block-b">
+	        <a href="#" data-role="button" id="reset">취소</a>
+	       </div> 
+        </div>
+       </form> 
+     </div> 
+   
+   </div>
 
 </body>
 </html> 
