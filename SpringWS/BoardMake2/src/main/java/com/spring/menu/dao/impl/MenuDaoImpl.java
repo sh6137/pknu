@@ -25,4 +25,9 @@ public class MenuDaoImpl implements MenuDao{
 		return menuList;
 	}
 	
+	@Override
+	public void setWriteMenu(HashMap<String, Object> map) {
+		sqlSession.insert("Menu.MenuInsert",map);
+	}
+	
 }

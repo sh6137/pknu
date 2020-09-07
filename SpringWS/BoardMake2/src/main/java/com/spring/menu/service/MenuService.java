@@ -9,4 +9,6 @@ public interface MenuService {
 
 	List<MenuVo> getList(HashMap<String, Object> map);
 
+	void setWriteMenu(HashMap<String, Object> map);
+
 }

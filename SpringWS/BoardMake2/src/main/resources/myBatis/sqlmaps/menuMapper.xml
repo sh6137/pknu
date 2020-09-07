@@ -10,11 +10,20 @@
  		<result property="menu_seq" column="MENU_SEQ" javaType="int"/>
  	</resultMap>
  	
- 	<select id="MenuList">
+ 	<select id="MenuList"
+ 		statementType="CALLABLE"
+ 		parameterType="hashmap"
+ 		resultType="com.spring.menu.vo.MenuVo">
  		
- 	
+ 		{CALL PKG_MBOARD.PROC_MENU_LIST(
+ 			#{result, mode=OUT, jdbcType=CURSOR,
+ 				javaType=ResultSet, resultMap=menuMap}
+ 		)}
  	</select>
- 
+ 	
+ 	<insert id="MenuInsert">
+ 	
+ 	</insert>
  
  </mapper>
 

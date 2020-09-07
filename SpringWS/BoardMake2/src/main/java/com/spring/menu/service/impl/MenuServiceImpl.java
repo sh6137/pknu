@@ -19,5 +19,10 @@ public class MenuServiceImpl implements MenuService{
 			List<MenuVo> menuList = menuDao.getList(map);
 		return menuList;
 	}
+	@Override
+	public void setWriteMenu(HashMap<String, Object> map) {
+			
+		menuDao.setWriteMenu(map);
+	}
 
 }
