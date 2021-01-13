@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-13T07:43:02.823Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="jtTw-t2nIm9IoR3fTZHq" version="14.1.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-13T07:44:05.723Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="RLOV9RnBbxwdYwdnX0cC" version="14.1.9" type="github">
   <diagram id="elj1aR2KJB44pm3A8Auk" name="Page-1">
     <mxGraphModel dx="1029" dy="2135" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1191,16 +1191,16 @@
           <mxGeometry x="34.6" y="3660" width="140" height="90" as="geometry" />
         </mxCell>
         <mxCell id="tycSg9s_605FR_uE6vuB-244" value="board : 게시판" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="303.3" y="3640" width="84.5" height="20" as="geometry" />
+          <mxGeometry x="321.2" y="3640" width="84.5" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tycSg9s_605FR_uE6vuB-245" value="id : number&lt;br&gt;orderId : 오더아이디&lt;br&gt;content : 내용&lt;br&gt;createDate : 생성일자&amp;nbsp;&lt;br&gt;title : 제목&lt;br&gt;memId : 아이디" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="303.3" y="3660" width="140" height="110" as="geometry" />
+          <mxGeometry x="321.2" y="3660" width="140" height="110" as="geometry" />
         </mxCell>
         <mxCell id="tycSg9s_605FR_uE6vuB-246" value="coinonestate : 코인원 상태 체크" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="471.5" y="3640" width="176.3" height="20" as="geometry" />
+          <mxGeometry x="540" y="3640" width="176.3" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tycSg9s_605FR_uE6vuB-247" value="site : 사이트&amp;nbsp;&lt;br&gt;state : 상태 확인" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="471.5" y="3660" width="140" height="40" as="geometry" />
+          <mxGeometry x="540" y="3660" width="140" height="40" as="geometry" />
         </mxCell>
         <mxCell id="tycSg9s_605FR_uE6vuB-248" value="report_tbl (업비트 빗썸 코인원)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="34.6" y="3790" width="170" height="20" as="geometry" />
@@ -1209,22 +1209,22 @@
           <mxGeometry x="34.6" y="3810" width="230" height="430" as="geometry" />
         </mxCell>
         <mxCell id="tycSg9s_605FR_uE6vuB-250" value="&amp;nbsp;revenuestate_tbl" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="303.3" y="3790" width="99.5" height="20" as="geometry" />
+          <mxGeometry x="321.2" y="3790" width="99.5" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tycSg9s_605FR_uE6vuB-251" value="idx : number&lt;br&gt;memId :아이디&lt;br&gt;site : 사이트&lt;br&gt;state : 상태 확인" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="303.3" y="3810" width="140" height="110" as="geometry" />
+          <mxGeometry x="321.2" y="3810" width="140" height="110" as="geometry" />
         </mxCell>
         <mxCell id="tycSg9s_605FR_uE6vuB-254" value="user" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="471.5" y="3710" width="41.3" height="20" as="geometry" />
+          <mxGeometry x="540" y="3710" width="41.3" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tycSg9s_605FR_uE6vuB-255" value="memId : 아이디&lt;br&gt;createDate : 생성날짜&lt;br&gt;email : 이메일&lt;br&gt;idx : number&lt;br&gt;name : 이름&lt;br&gt;password : 비밀번호&lt;br&gt;phone : 전화번호&lt;br&gt;role : 유저상태" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="471.5" y="3730" width="140" height="130" as="geometry" />
+          <mxGeometry x="540" y="3730" width="140" height="130" as="geometry" />
         </mxCell>
         <mxCell id="tycSg9s_605FR_uE6vuB-257" value="vm_tbl" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="471.5" y="3870" width="41.3" height="20" as="geometry" />
+          <mxGeometry x="540" y="3870" width="41.3" height="20" as="geometry" />
         </mxCell>
         <mxCell id="tycSg9s_605FR_uE6vuB-258" value="idx : number&lt;br&gt;siteName : 사이트&lt;br&gt;vmId : 코인명&lt;br&gt;vmName : 코인명 한글" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
-          <mxGeometry x="471.5" y="3890" width="140" height="90" as="geometry" />
+          <mxGeometry x="540" y="3890" width="140" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
